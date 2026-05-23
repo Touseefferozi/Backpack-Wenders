@@ -16,21 +16,21 @@ export function Hero() {
           src="/Images/WhatsApp Image 2026-05-22 at 4.41.12 PM.jpeg"
           alt="QA/QC team in technical briefing — field coordination"
           fill
-          className="object-cover"
+          className="object-cover saturate-50"
           priority
           quality={85}
         />
-        <div className="absolute inset-0 bg-[#02040a]/88" />
+        <div className="absolute inset-0 bg-[#02040a]/92" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%)]" />
       </div>
 
       <div className="relative mx-auto flex max-w-7xl flex-col px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32">
         <Reveal>
           <div className="space-y-6 lg:space-y-8">
-            <h1 className="font-display text-4xl font-bold leading-tight text-white text-center sm:text-5xl lg:text-6xl">
+            <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white text-center sm:text-5xl lg:text-7xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.6)]">
               {content.hero.headline}
             </h1>
-            <p className="max-w-3xl text-base leading-7 text-slate-400 text-center sm:text-lg sm:leading-8 mx-auto">
+            <p className="max-w-3xl text-base leading-7 text-slate-100 text-center sm:text-lg sm:leading-8 mx-auto drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
               {content.hero.subheadline}
             </p>
 
@@ -51,4 +51,6 @@ export function Hero() {
     </section>
   );
 }
+
+
 

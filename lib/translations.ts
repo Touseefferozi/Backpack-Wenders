@@ -183,7 +183,37 @@ export const translations = {
       sending: 'Sending…',
       send: 'Send inquiry',
       success: 'Your inquiry has been received.',
-      error: 'Something went wrong. Please try again.'
+    },
+    industriesShowcase: {
+      eyebrow: 'Global Expertise',
+      title: 'Industries We Serve',
+      subtitle: 'From offshore energy to mission-critical facilities, we deploy precision expertise across industrial sectors worldwide.',
+      industries: [
+        {
+          title: 'Offshore & Renewable Energy',
+          description: 'Monopiles, offshore wind platforms, and subsea infrastructure QA/QC'
+        },
+        {
+          title: 'Pipelines & Refineries',
+          description: 'High-pressure pipeline systems and refinery infrastructure inspection'
+        },
+        {
+          title: 'Heavy Construction',
+          description: 'Large-scale industrial construction, welding, and structural integrity'
+        },
+        {
+          title: 'Data Centers & Critical Facilities',
+          description: 'Mission-critical infrastructure deployment and commissioning oversight'
+        },
+        {
+          title: 'Technical Field Operations',
+          description: 'On-site QA/QC coordination, NDT inspection, and quality assurance'
+        },
+        {
+          title: 'Enterprise Project Management',
+          description: 'Digital coordination systems and real-time project tracking dashboards'
+        }
+      ]
     }
   },
   de: {

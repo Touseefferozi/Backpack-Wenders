@@ -40,70 +40,64 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="grid gap-5 rounded-[32px] border border-emerald-300/15 bg-[linear-gradient(180deg,rgba(134,239,172,0.14),rgba(7,20,13,0.92))] p-6 shadow-industrial backdrop-blur-sm sm:p-8"
+      className="mt-8 grid gap-5"
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm text-emerald-50/78">
-          {content.contactForm.name}
+        <label className="grid gap-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.name}</span>
           <input
             required
             value={formState.name}
             onChange={(event) => setFormState((current) => ({ ...current, name: event.target.value }))}
-            className="rounded-2xl border border-emerald-300/15 bg-[rgba(7,20,13,0.86)] px-4 py-3 text-white outline-none transition placeholder:text-emerald-50/35 focus:border-emerald-200/35 focus:ring-1 focus:ring-emerald-200/10"
+            className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
             placeholder={content.contactForm.namePlaceholder}
           />
         </label>
-        <label className="grid gap-2 text-sm text-emerald-50/78">
-          {content.contactForm.email}
+        <label className="grid gap-2">
+          <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.email}</span>
           <input
             required
             type="email"
             value={formState.email}
             onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value }))}
-            className="rounded-2xl border border-emerald-300/15 bg-[rgba(7,20,13,0.86)] px-4 py-3 text-white outline-none transition placeholder:text-emerald-50/35 focus:border-emerald-200/35 focus:ring-1 focus:ring-emerald-200/10"
+            className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
             placeholder={content.contactForm.emailPlaceholder}
           />
         </label>
       </div>
 
-      <label className="grid gap-2 text-sm text-emerald-50/78">
-        {content.contactForm.company}
+      <label className="grid gap-2">
+        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.company}</span>
         <input
           value={formState.company}
           onChange={(event) => setFormState((current) => ({ ...current, company: event.target.value }))}
-          className="rounded-2xl border border-emerald-300/15 bg-[rgba(7,20,13,0.86)] px-4 py-3 text-white outline-none transition placeholder:text-emerald-50/35 focus:border-emerald-200/35 focus:ring-1 focus:ring-emerald-200/10"
+          className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
           placeholder={content.contactForm.companyPlaceholder}
         />
       </label>
 
-      <label className="grid gap-2 text-sm text-emerald-50/78">
-        {content.contactForm.message}
+      <label className="grid gap-2">
+        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.message}</span>
         <textarea
           required
-          rows={5}
+          rows={4}
           value={formState.message}
           onChange={(event) => setFormState((current) => ({ ...current, message: event.target.value }))}
-          className="rounded-3xl border border-emerald-300/15 bg-[rgba(7,20,13,0.86)] px-4 py-3 text-white outline-none transition placeholder:text-emerald-50/35 focus:border-emerald-200/35 focus:ring-1 focus:ring-emerald-200/10"
+          className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10 resize-none"
           placeholder={content.contactForm.messagePlaceholder}
         />
       </label>
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="inline-flex w-full items-center justify-center rounded-full bg-[#86efac] px-6 py-3 text-sm font-semibold text-[#052e16] transition hover:bg-[#a7f3d0] disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
-        >
-          {status === 'loading' ? content.contactForm.sending : content.contactForm.send}
-        </button>
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-emerald-400 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-300 disabled:cursor-not-allowed disabled:opacity-70"
+      >
+        {status === 'loading' ? content.contactForm.sending : 'Let&apos;s Talk'}
+      </button>
 
-        <p className="text-xs leading-5 text-emerald-50/55 sm:max-w-xs sm:text-right">
-          Your message goes directly to our team. We reply with a clear next step, not an automated maze.
-        </p>
-      </div>
-
-      {status === 'success' ? <p className="text-sm text-emerald-200">{content.contactForm.success}</p> : null}
-      {status === 'error' ? <p className="text-sm text-rose-300">{content.contactForm.error}</p> : null}
+      {status === 'success' ? <p className="text-sm text-emerald-300">{content.contactForm.success}</p> : null}
+      {status === 'error' ? <p className="text-sm text-rose-300">Failed to send. Please try again.</p> : null}
     </form>
   );
 }
