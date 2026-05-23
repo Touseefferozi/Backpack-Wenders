@@ -35,10 +35,20 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const ecosystemDropdownRef = useRef<HTMLDivElement | null>(null);
   const languageDropdownRef = useRef<HTMLDivElement | null>(null);
   const { content, language, options, setLanguage } = useLanguage();
   const selectedLanguage = options.find((option) => option.code === language) ?? options[0];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -81,7 +91,11 @@ export function Navbar() {
         };
 
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur-xl">
+    <header className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
+      isScrolled
+        ? 'border-white/5 bg-black/60 backdrop-blur-md'
+        : 'border-white/10 bg-background/95 backdrop-blur-xl'
+    }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
           <Image

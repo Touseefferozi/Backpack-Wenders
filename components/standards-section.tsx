@@ -12,7 +12,7 @@ export function StandardsSection() {
         <Reveal>
           <h2 className="font-display text-4xl font-bold text-white sm:text-5xl">
             {content.standards.title}
-          </h2>.
+          </h2>
         </Reveal>
 
         <div className="mt-12 grid gap-12 lg:grid-cols-2">
@@ -24,7 +24,7 @@ export function StandardsSection() {
                 {content.standards.list.map((standard) => (
                   <div
                     key={standard}
-                    className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-center font-semibold text-accent transition hover:bg-white/[0.05]"
+                    className="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-center font-semibold text-emerald-300 transition hover:border-white/15 hover:bg-white/[0.05] hover:text-emerald-200"
                   >
                     {standard}
                   </div>
@@ -35,7 +35,7 @@ export function StandardsSection() {
 
           {/* Global Deployment */}
           <Reveal>
-            <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/10 via-transparent to-transparent p-8">
+            <div className="rounded-2xl border border-emerald-400/15 bg-gradient-to-br from-emerald-400/8 via-transparent to-transparent p-8">
               <h3 className="text-2xl font-bold text-white">{content.standards.globalTitle}</h3>
               <p className="mt-4 text-base leading-7 text-slate-300">
                 {content.standards.globalDescription}
@@ -43,7 +43,7 @@ export function StandardsSection() {
               <div className="mt-6 grid gap-3">
                 {content.standards.regions.map((region) => (
                   <div key={region} className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-accent" />
+                    <div className="h-2 w-2 rounded-full bg-emerald-300/80" />
                     <span className="text-sm text-slate-200">{region}</span>
                   </div>
                 ))}

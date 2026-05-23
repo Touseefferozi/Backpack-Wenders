@@ -5,21 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#0a0f1a',
-        surface: '#111827',
-        surfaceAlt: '#1a202c',
+        background: '#090d12',
+        surface: '#11161d',
+        surfaceAlt: '#18202a',
         line: 'rgba(255,255,255,0.08)',
         accent: {
-          DEFAULT: '#4ade80',
-          soft: '#86efac',
-          dark: '#22c55e'
+          DEFAULT: '#57c48a',
+          soft: '#8fd9ad',
+          dark: '#2f8f63'
         }
       },
       boxShadow: {
         industrial: '0 24px 80px rgba(0,0,0,0.45)'
       },
       backgroundImage: {
-        'radial-industrial': 'radial-gradient(circle at top, rgba(214,185,141,0.16), transparent 52%)'
+        'radial-industrial': 'radial-gradient(circle at top, rgba(87,196,138,0.12), transparent 52%)'
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

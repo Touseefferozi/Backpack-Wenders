@@ -21,7 +21,7 @@ export function DeploymentModelSection() {
               </p>
             </div>
           </Reveal>
-
+        
           {/* Experts */}
           <Reveal>
             <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/10 via-transparent to-transparent p-8">

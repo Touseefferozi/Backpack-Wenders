@@ -7,6 +7,7 @@ import { InfrastructureSection } from '@/components/infrastructure-section';
 import { IndustriesShowcase } from '@/components/industries-showcase';
 import { DisciplinesSection } from '@/components/disciplines-section';
 import { StandardsSection } from '@/components/standards-section';
+import { ImageCarousel } from '@/components/image-carousel';
 import { DeploymentModelSection } from '@/components/deployment-model-section';
 import { ClosingCTASection } from '@/components/closing-cta-section';
 import { Footer } from '@/components/footer';
@@ -47,6 +48,7 @@ export default function HomePage() {
         <AboutUsSection />
         <InfrastructureSection />
         <IndustriesShowcase />
+        <ImageCarousel />
         <DisciplinesSection />
         <StandardsSection />
         <DeploymentModelSection />

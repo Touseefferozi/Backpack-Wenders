@@ -63,7 +63,7 @@ export function ParticleBackground() {
       context.clearRect(0, 0, width, height);
 
       const backgroundGradient = context.createRadialGradient(width * 0.22, height * 0.15, 0, width * 0.5, height * 0.5, Math.max(width, height));
-      backgroundGradient.addColorStop(0, 'rgba(74, 222, 128, 0.10)');
+      backgroundGradient.addColorStop(0, 'rgba(255, 255, 255, 0.03)');
       backgroundGradient.addColorStop(0.45, 'rgba(15, 23, 42, 0.02)');
       backgroundGradient.addColorStop(1, 'rgba(5, 7, 11, 0)');
       context.fillStyle = backgroundGradient;
@@ -80,8 +80,8 @@ export function ParticleBackground() {
 
         context.beginPath();
         context.fillStyle = `rgba(255, 255, 255, ${particle.alpha})`;
-        context.shadowColor = 'rgba(74, 222, 128, 0.4)';
-        context.shadowBlur = 10;
+        context.shadowColor = 'rgba(255, 255, 255, 0.12)';
+        context.shadowBlur = 6;
         context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         context.fill();
         context.shadowBlur = 0;
@@ -95,7 +95,7 @@ export function ParticleBackground() {
           if (distance < 130) {
             const opacity = (1 - distance / 130) * 0.18;
             context.beginPath();
-            context.strokeStyle = `rgba(74, 222, 128, ${opacity})`;
+            context.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.65})`;
             context.lineWidth = 1;
             context.moveTo(particle.x, particle.y);
             context.lineTo(other.x, other.y);
@@ -123,11 +123,11 @@ export function ParticleBackground() {
 
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.15),transparent_32%),radial-gradient(circle_at_top_right,rgba(59,130,246,0.10),transparent_28%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.04),transparent_30%)]" />
-      <div className="absolute left-[8%] top-[18%] h-64 w-64 rounded-full bg-accent/10 blur-3xl" />
-      <div className="absolute right-[12%] top-[28%] h-72 w-72 rounded-full bg-sky-500/10 blur-3xl" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_30%),radial-gradient(circle_at_bottom,rgba(255,255,255,0.02),transparent_24%)]" />
+      <div className="absolute left-[8%] top-[18%] h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+      <div className="absolute right-[12%] top-[28%] h-72 w-72 rounded-full bg-white/5 blur-3xl" />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.18),rgba(5,7,11,0.72))]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,11,0.22),rgba(5,7,11,0.78))]" />
     </div>
   );
 }

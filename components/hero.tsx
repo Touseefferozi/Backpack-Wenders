@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
 import { SupportGateway } from '@/components/support-gateway';
-import { ParticleBackground } from '@/components/particle-background';
 import { useLanguage } from '@/components/language-provider';
 import { siteConfig } from '@/lib/site';
 
@@ -12,21 +11,18 @@ export function Hero() {
 
   return (
     <section id="home" className="relative overflow-hidden border-b border-white/10 pt-32 sm:pt-36 lg:pt-40">
-      {/* Industrial Background Image with Overlay */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=1600&h=900&fit=crop"
-          alt="Industrial offshore platform"
+          src="/Images/WhatsApp Image 2026-05-22 at 4.41.12 PM.jpeg"
+          alt="QA/QC team in technical briefing — field coordination"
           fill
           className="object-cover"
           priority
           quality={85}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/80 to-black/85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-[#02040a]/88" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%)]" />
       </div>
-
-      <ParticleBackground />
 
       <div className="relative mx-auto flex max-w-7xl flex-col px-4 pb-24 sm:px-6 lg:px-8 lg:pb-32">
         <Reveal>
@@ -44,7 +40,7 @@ export function Hero() {
                 href={siteConfig.talentIntakeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-accent/40 hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-8 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white/25 hover:bg-white/8"
               >
                 {content.hero.joinNetwork}
               </a>

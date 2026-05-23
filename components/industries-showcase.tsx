@@ -15,38 +15,38 @@ export function IndustriesShowcase() {
     {
       title: 'Offshore & Renewable Energy',
       description: 'Monopiles, offshore wind platforms, and subsea infrastructure QA/QC',
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&h=600&fit=crop',
-      alt: 'Offshore wind turbine platform'
+      image: '/Images/offshore-wind-turbine-fixation.png',
+      alt: 'Offshore monopile fabrication and installation'
     },
     {
       title: 'Pipelines & Refineries',
       description: 'High-pressure pipeline systems and refinery infrastructure inspection',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=600&fit=crop',
-      alt: 'Industrial pipeline infrastructure'
+      image: '/Images/Pipelines & Refineries.png',
+      alt: 'Pipeline construction and inspection site'
     },
     {
       title: 'Heavy Construction',
       description: 'Large-scale industrial construction, welding, and structural integrity',
-      image: 'https://images.unsplash.com/photo-1581092162080-8cae941b4676?w=600&h=600&fit=crop',
-      alt: 'Heavy construction site with workers'
+      image: '/Images/Heavy Construction.png',
+      alt: 'Heavy construction and foundation production yard'
     },
     {
       title: 'Data Centers & Critical Facilities',
       description: 'Mission-critical infrastructure deployment and commissioning oversight',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=600&fit=crop',
-      alt: 'Data center server infrastructure'
+      image: '/Images/Data center critical.png',
+      alt: 'Data center critical infrastructure'
     },
     {
       title: 'Technical Field Operations',
       description: 'On-site QA/QC coordination, NDT inspection, and quality assurance',
-      image: 'https://images.unsplash.com/photo-1581092918692-8d1d08d1a4b0?w=600&h=600&fit=crop',
-      alt: 'Technical field inspection'
+      image: '/Images/Technical Field Operations.png',
+      alt: 'Field inspection team conducting QA/QC'
     },
     {
       title: 'Enterprise Project Management',
       description: 'Digital coordination systems and real-time project tracking dashboards',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop',
-      alt: 'Technical team meeting'
+      image: '/Images/Enterprise Project Management.png',
+      alt: 'Project management and technical coordination meeting'
     }
   ];
 

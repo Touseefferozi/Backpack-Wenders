@@ -4,9 +4,18 @@ import { useEffect, useState } from 'react';
 import { ArrowRight, Mail, ShieldCheck, X } from 'lucide-react';
 import { useLanguage } from '@/components/language-provider';
 
-export function SupportGateway() {
+type SupportGatewayProps = {
+  tone?: 'accent' | 'neutral';
+};
+
+export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
   const [open, setOpen] = useState(false);
   const { content } = useLanguage();
+
+  const triggerClassName =
+    tone === 'neutral'
+      ? 'inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10'
+      : 'inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-accent-soft';
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
@@ -20,7 +29,7 @@ export function SupportGateway() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-accent-soft"
+        className={triggerClassName}
       >
         {content.supportGateway.button}
       </button>
