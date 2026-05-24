@@ -89,7 +89,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-black transition-colors duration-200 hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-70 shadow-sm"
       >
         {status === 'loading' ? content.contactForm.sending : content.contactForm.send}
       </button>

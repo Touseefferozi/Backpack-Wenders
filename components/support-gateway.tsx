@@ -15,7 +15,7 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
   const triggerClassName =
     tone === 'neutral'
       ? 'inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10'
-      : 'inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-gray-900 transition hover:bg-accent-soft';
+      : 'inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-gray-900 transition hover:bg-accent-dark';
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
