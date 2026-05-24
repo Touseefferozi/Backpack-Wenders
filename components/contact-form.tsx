@@ -38,52 +38,50 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mt-8 grid gap-5"
-    >
+    <form onSubmit={handleSubmit} className="mt-8 grid gap-4 sm:gap-5">
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="grid gap-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.name}</span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-white/80">{content.contactForm.name}</span>
           <input
             required
             value={formState.name}
             onChange={(event) => setFormState((current) => ({ ...current, name: event.target.value }))}
-            className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
+            className="w-full rounded-lg border border-accent/15 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-white/30 focus:border-accent/40 focus:ring-2 focus:ring-accent/10"
             placeholder={content.contactForm.namePlaceholder}
           />
         </label>
+
         <label className="grid gap-2">
-          <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.email}</span>
+          <span className="text-xs font-semibold uppercase tracking-widest text-white/80">{content.contactForm.email}</span>
           <input
             required
             type="email"
             value={formState.email}
             onChange={(event) => setFormState((current) => ({ ...current, email: event.target.value }))}
-            className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
+            className="w-full rounded-lg border border-accent/15 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-white/30 focus:border-accent/40 focus:ring-2 focus:ring-accent/10"
             placeholder={content.contactForm.emailPlaceholder}
           />
         </label>
       </div>
 
       <label className="grid gap-2">
-        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.company}</span>
+        <span className="text-xs font-semibold uppercase tracking-widest text-white/80">{content.contactForm.company}</span>
         <input
           value={formState.company}
           onChange={(event) => setFormState((current) => ({ ...current, company: event.target.value }))}
-          className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10"
+          className="w-full rounded-lg border border-accent/15 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-white/30 focus:border-accent/40 focus:ring-2 focus:ring-accent/10"
           placeholder={content.contactForm.companyPlaceholder}
         />
       </label>
 
       <label className="grid gap-2">
-        <span className="text-xs font-semibold uppercase tracking-widest text-emerald-100/70">{content.contactForm.message}</span>
+        <span className="text-xs font-semibold uppercase tracking-widest text-white/80">{content.contactForm.message}</span>
         <textarea
           required
           rows={4}
           value={formState.message}
           onChange={(event) => setFormState((current) => ({ ...current, message: event.target.value }))}
-          className="rounded-lg border border-emerald-300/20 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-emerald-50/30 focus:border-emerald-300/50 focus:ring-2 focus:ring-emerald-400/10 resize-none"
+          className="w-full rounded-lg border border-accent/15 bg-white/5 px-4 py-2.5 text-white outline-none transition placeholder:text-white/30 focus:border-accent/40 focus:ring-2 focus:ring-accent/10 resize-none"
           placeholder={content.contactForm.messagePlaceholder}
         />
       </label>
@@ -91,12 +89,12 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-emerald-400 px-6 py-3 text-sm font-semibold text-emerald-950 transition hover:bg-emerald-300 disabled:cursor-not-allowed disabled:opacity-70"
+        className="mt-2 inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-black transition hover:bg-accent-soft disabled:cursor-not-allowed disabled:opacity-70"
       >
-        {status === 'loading' ? content.contactForm.sending : 'Let&apos;s Talk'}
+        {status === 'loading' ? content.contactForm.sending : content.contactForm.send}
       </button>
 
-      {status === 'success' ? <p className="text-sm text-emerald-300">{content.contactForm.success}</p> : null}
+      {status === 'success' ? <p className="text-sm text-white/85">{content.contactForm.success}</p> : null}
       {status === 'error' ? <p className="text-sm text-rose-300">Failed to send. Please try again.</p> : null}
     </form>
   );

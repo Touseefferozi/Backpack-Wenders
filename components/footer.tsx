@@ -22,7 +22,7 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-background py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <h3 className="text-lg font-bold text-white">{footerInfo.company}</h3>
@@ -116,7 +116,7 @@ export function Footer() {
         <div className="my-12 border-t border-white/10" />
 
         {/* Bottom footer */}
-        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row sm:items-start">
           <p className="text-center text-sm text-slate-500 sm:text-left">
             {content.footer.rights}
           </p>
@@ -125,6 +125,7 @@ export function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
+              title="LinkedIn"
               className="text-slate-400 transition hover:text-accent"
             >
               <Linkedin className="h-5 w-5" />

@@ -13,13 +13,13 @@ export function InfrastructureSection() {
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <Reveal>
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/80">
+              <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">
                 {content.infrastructure.eyebrow}
               </p>
               <h2 className="mt-4 font-display text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
                 {content.infrastructure.title}
               </h2>
-              <p className="mt-6 text-lg leading-8 text-slate-300 sm:text-xl">
+              <p className="mt-6 text-lg leading-8 text-white/82 sm:text-xl">
                 {content.infrastructure.subtitle}
               </p>
 
@@ -27,7 +27,7 @@ export function InfrastructureSection() {
                 {['QA/QC', 'Inspection', 'Commissioning', 'Field Support'].map((item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-slate-200"
+                    className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/85"
                   >
                     {item}
                   </span>
@@ -38,8 +38,8 @@ export function InfrastructureSection() {
 
           <Reveal>
             <div className="rounded-[28px] border border-white/10 bg-white/[0.04] p-6 shadow-industrial backdrop-blur-sm sm:p-8">
-              <p className="text-sm uppercase tracking-[0.32em] text-slate-500">Global Coverage</p>
-              <p className="mt-4 text-base leading-7 text-slate-300">{content.infrastructure.intro}</p>
+              <p className="text-sm uppercase tracking-[0.32em] text-white/65">Global Coverage</p>
+              <p className="mt-4 text-base leading-7 text-white/82">{content.infrastructure.intro}</p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 {['Europe', 'North America', 'Middle East', 'Asia-Pacific'].map((region) => (
                   <div
@@ -67,7 +67,7 @@ export function InfrastructureSection() {
                     <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
                       {category.title}
                     </h3>
-                    <p className="mt-3 text-base leading-7 text-slate-300">
+                    <p className="mt-3 text-base leading-7 text-white/82">
                       {category.description}
                     </p>
                   </div>

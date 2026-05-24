@@ -181,7 +181,7 @@ export const translations = {
       companyPlaceholder: 'Organization name',
       messagePlaceholder: 'Tell us about the project scope, location, and timeline.',
       sending: 'Sending…',
-      send: 'Send inquiry',
+      send: "Let's Talk",
       success: 'Your inquiry has been received.',
     },
     industriesShowcase: {

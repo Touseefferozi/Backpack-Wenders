@@ -51,6 +51,7 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
+                title={content.supportGateway.closeAria}
                 className="rounded-full border border-white/10 p-2 text-white/70 transition hover:bg-white/5 hover:text-white"
               >
                 <X className="h-5 w-5" />

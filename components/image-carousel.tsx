@@ -31,11 +31,11 @@ export function ImageCarousel() {
       cta: 'View Offshore Projects'
     },
     {
-      src: '/Images/WhatsApp Image 2026-05-22 at 4.19.40 PM.jpeg',
-      title: 'Heavy Industrial Construction',
-      description: 'Large-scale fabrication, assembly and site integration for heavy industrial structures and plants.',
-      alt: 'Heavy fabrication yard with structural assembly',
-      cta: 'Explore Fabrication'
+      src: '/Images/Enterprise Project Management.png',
+      title: 'Industrial Coordination & Reporting',
+      description: 'Digital coordination systems, QA/QC reporting, and management dashboards for industrial execution.',
+      alt: 'Industrial project management dashboard and coordination meeting',
+      cta: 'Explore Coordination'
     },
     {
       src: '/Images/Image (11).jpg',
@@ -59,11 +59,11 @@ export function ImageCarousel() {
       cta: 'Explore Data Centers'
     },
     {
-      src: '/Images/Heavy Cons.jpg',
-      title: 'Heavy Construction & Fabrication',
-      description: 'Foundations, structural steel and heavy fabrication delivered to exacting industrial standards.',
-      alt: 'Heavy construction site with structural fabrication',
-      cta: 'See Construction'
+      src: '/Images/Data center critical.png',
+      title: 'Quality Monitoring & Critical Facilities',
+      description: 'Precision monitoring, documentation control and operational oversight for mission-critical environments.',
+      alt: 'Critical facility inspection and monitoring',
+      cta: 'See Monitoring'
     },
     {
       src: '/Images/Image (1).jpg',
@@ -123,17 +123,17 @@ export function ImageCarousel() {
 
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(57,170,118,0.28),transparent_42%),linear-gradient(180deg,#08110c_0%,#050805_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(215,164,74,0.20),transparent_42%),linear-gradient(180deg,#08110c_0%,#050805_100%)]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="mb-12 text-center sm:mb-14 lg:mb-16">
+          <div className="mb-12 text-left sm:mb-14 lg:mb-16">
             <motion.h2
               key={`section-title-${currentIndex}`}
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
-              className="font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl"
+              className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-6xl"
             >
               Unlock Your Potential With
             </motion.h2>
@@ -141,22 +141,22 @@ export function ImageCarousel() {
               initial={{ scaleX: 0, opacity: 0 }}
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 0.45, delay: 0.15 }}
-              className="mx-auto mt-5 h-0.5 w-16 origin-center rounded-full bg-emerald-400/55"
+              className="mx-auto mt-5 h-0.5 w-16 origin-center rounded-full bg-accent/65"
             />
           </div>
         </Reveal>
 
         <Reveal>
-          <div className="rounded-[28px] border border-emerald-400/10 bg-black/55 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:p-5 lg:p-6">
+          <div className="rounded-[28px] border border-accent/10 bg-black/55 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:p-5 lg:p-6">
             <div className="grid grid-cols-1 overflow-hidden rounded-[22px] border border-white/5 bg-black/85 lg:grid-cols-[0.95fr_1.05fr]">
-              <div className="flex flex-col justify-between gap-8 p-7 sm:p-9 lg:min-h-[430px] lg:p-10">
+              <div className="flex flex-col justify-between gap-8 p-6 sm:p-8 lg:min-h-[430px] lg:p-10">
                 <div>
                   <motion.p
                     key={`eyebrow-${currentIndex}`}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35 }}
-                    className="text-[0.72rem] font-semibold uppercase tracking-[0.45em] text-emerald-400"
+                    className="text-[0.72rem] font-semibold uppercase tracking-[0.45em] text-accent"
                   >
                     Industrial Portfolio
                   </motion.p>
@@ -168,7 +168,7 @@ export function ImageCarousel() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -18 }}
                       transition={{ duration: 0.45, ease: 'easeOut' }}
-                      className="mt-5 max-w-xl text-4xl font-semibold leading-[0.98] text-white sm:text-5xl lg:text-[3.5rem]"
+                      className="mt-5 max-w-xl text-3xl font-semibold leading-[1.02] text-white sm:text-4xl lg:text-[3.5rem]"
                     >
                       {currentImage.title}
                     </motion.h3>
@@ -181,7 +181,7 @@ export function ImageCarousel() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -14 }}
                       transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
-                      className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg"
+                      className="mt-6 max-w-xl text-sm leading-7 text-white/82 sm:text-base sm:leading-7 lg:text-lg"
                     >
                       {currentImage.description}
                     </motion.p>
@@ -194,7 +194,7 @@ export function ImageCarousel() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, delay: 0.16 }}
                   >
-                    <button className="inline-flex min-w-[190px] items-center justify-center rounded-full border border-white/85 bg-emerald-400 px-8 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(52,211,153,0.18)] transition duration-300 hover:bg-emerald-300 hover:shadow-[0_0_34px_rgba(52,211,153,0.28)]">
+                    <button className="inline-flex w-full min-w-[190px] items-center justify-center rounded-full border border-white/85 bg-accent px-8 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(215,164,74,0.18)] transition duration-300 hover:bg-accent-soft hover:shadow-[0_0_34px_rgba(215,164,74,0.28)] sm:w-auto">
                       {currentImage.cta ?? 'Explore Project'}
                     </button>
                   </motion.div>
@@ -205,9 +205,9 @@ export function ImageCarousel() {
                     transition={{ duration: 0.4, delay: 0.2 }}
                     className="flex items-center gap-2 text-sm"
                   >
-                    <span className="font-semibold text-emerald-400">{String(currentIndex + 1).padStart(2, '0')}</span>
-                    <span className="h-px w-6 bg-emerald-400/30" />
-                    <span className="text-slate-500">{String(images.length).padStart(2, '0')}</span>
+                    <span className="font-semibold text-accent">{String(currentIndex + 1).padStart(2, '0')}</span>
+                    <span className="h-px w-6 bg-accent/30" />
+                    <span className="text-white/45">{String(images.length).padStart(2, '0')}</span>
                   </motion.div>
 
                   <div className="flex items-center gap-3 pt-2">
@@ -215,7 +215,7 @@ export function ImageCarousel() {
                       onClick={prevSlide}
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.94 }}
-                      className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white transition hover:border-emerald-400/30 hover:bg-white/5"
+                      className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white transition hover:border-accent/30 hover:bg-white/5"
                       aria-label="Previous slide"
                     >
                       <ChevronLeft className="h-5 w-5" />
@@ -225,7 +225,7 @@ export function ImageCarousel() {
                       onClick={nextSlide}
                       whileHover={{ scale: 1.04 }}
                       whileTap={{ scale: 0.94 }}
-                      className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white transition hover:border-emerald-400/30 hover:bg-white/5"
+                      className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-black/70 text-white transition hover:border-accent/30 hover:bg-white/5"
                       aria-label="Next slide"
                     >
                       <ChevronRight className="h-5 w-5" />
@@ -301,7 +301,7 @@ export function ImageCarousel() {
               whileTap={{ scale: 0.9 }}
               className={`rounded-full transition-all duration-300 ${
                 index === currentIndex
-                  ? 'h-1.5 w-10 bg-emerald-400'
+                  ? 'h-1.5 w-10 bg-accent'
                   : 'h-1.5 w-1.5 bg-white/20 hover:bg-white/40'
               }`}
               aria-label={`Go to slide ${index + 1}`}

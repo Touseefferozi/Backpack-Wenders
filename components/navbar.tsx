@@ -94,7 +94,7 @@ export function Navbar() {
     <header className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
       isScrolled
         ? 'border-white/5 bg-black/60 backdrop-blur-md'
-        : 'border-white/10 bg-background/95 backdrop-blur-xl'
+        : 'border-white/10 bg-white/4 bg-clip-padding backdrop-blur-md'
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
@@ -127,7 +127,6 @@ export function Navbar() {
               type="button"
               onClick={() => setDropdownOpen((value) => !value)}
               className="inline-flex items-center gap-1 text-sm text-slate-300 transition hover:text-accent"
-              aria-expanded={dropdownOpen}
             >
               {content.nav.ecosystem} <ChevronDown className="h-4 w-4" />
             </button>
@@ -156,7 +155,6 @@ export function Navbar() {
               type="button"
               onClick={() => setLanguageOpen((value) => !value)}
               className="inline-flex min-w-[160px] items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-accent/40"
-              aria-expanded={languageOpen}
               aria-label={content.nav.selectLanguage}
             >
               <span className="inline-flex items-center gap-2 font-medium">
@@ -188,7 +186,6 @@ export function Navbar() {
           type="button"
           className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white lg:hidden"
           onClick={() => setOpen((value) => !value)}
-          aria-expanded={open}
           aria-label="Toggle navigation"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

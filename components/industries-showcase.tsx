@@ -30,10 +30,10 @@ export function IndustriesShowcase() {
         alt: 'Pipeline construction and inspection site'
       },
       {
-        title: 'Heavy Construction',
-        description: 'Large-scale industrial construction, welding, and structural integrity',
-        image: '/Images/Heavy Construction.png',
-        alt: 'Heavy construction and foundation production yard'
+        title: 'Industrial Oversight & Documentation',
+        description: 'QA/QC documentation control, reporting workflows, and engineering oversight for industrial operations',
+        image: '/Images/Enterprise Project Management.png',
+        alt: 'Digital industrial project control dashboard'
       },
       {
         title: 'Data Centers & Critical Facilities',
@@ -68,10 +68,10 @@ export function IndustriesShowcase() {
         alt: 'Pipelinebau und Inspektionsbereich'
       },
       {
-        title: 'Schwerindustrie-Konstruktion',
-        description: 'Großflächige Industriebauten, Schweißarbeiten und strukturelle Integrität',
-        image: '/Images/Heavy Construction.png',
-        alt: 'Schwerindustrie- und Fundamentproduktionshof'
+        title: 'Industrielle Überwachung & Dokumentation',
+        description: 'QA/QC-Dokumentationssteuerung, Reporting-Workflows und technische Aufsicht für den Industriebetrieb',
+        image: '/Images/Enterprise Project Management.png',
+        alt: 'Digitales Dashboard für industrielle Projektsteuerung'
       },
       {
         title: 'Rechenzentren & Kritische Anlagen',
@@ -116,14 +116,14 @@ export function IndustriesShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <Reveal>
-          <div className="mb-16 text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/80">
+          <div className="mb-16 text-left">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">
               {header.eyebrow}
             </p>
             <h2 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
               {header.title}
             </h2>
-            <p className="mt-6 mx-auto max-w-2xl text-base leading-7 text-slate-400 sm:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-white/78 sm:text-lg">
               {header.subtitle}
             </p>
           </div>
@@ -152,7 +152,7 @@ export function IndustriesShowcase() {
                   <h3 className="text-lg font-bold leading-tight text-white sm:text-xl">
                     {industry.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-300 line-clamp-2">
+                  <p className="mt-3 text-sm leading-6 text-white/82 line-clamp-2">
                     {industry.description}
                   </p>
                 </div>
