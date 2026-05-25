@@ -15,6 +15,12 @@ interface CarouselImage {
   cta?: string;
 }
 
+type TranslatedSlide = {
+  title?: string;
+  description?: string;
+  cta?: string;
+};
+
 export function ImageCarousel() {
   const images: CarouselImage[] = [
     {
@@ -123,7 +129,7 @@ export function ImageCarousel() {
   const currentImage = images[currentIndex] ?? images[0];
   // localized title/description/cta from language provider
   const { content } = useLanguage();
-  const slideContent = (content.imageCarousel as any)?.slides?.[currentIndex];
+  const slideContent = (content.imageCarousel as unknown as { slides?: ReadonlyArray<TranslatedSlide> } | undefined)?.slides?.[currentIndex];
   const title = slideContent?.title ?? currentImage.title;
   const description = slideContent?.description ?? currentImage.description;
   const cta = slideContent?.cta ?? currentImage.cta;

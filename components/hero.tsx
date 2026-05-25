@@ -6,7 +6,6 @@ import { Reveal } from '@/components/reveal';
 import { SupportGateway } from '@/components/support-gateway';
 import { useLanguage } from '@/components/language-provider';
 import { translations } from '@/lib/translations';
-import { siteConfig } from '@/lib/site';
 
 export function Hero() {
   const { content, language } = useLanguage();

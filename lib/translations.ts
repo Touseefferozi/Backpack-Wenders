@@ -216,6 +216,64 @@ export const translations = {
         }
       ]
     }
+    ,
+    imageCarousel: {
+      eyebrow: 'Industrial Portfolio',
+      title: 'Industrial Delivery & Deployment',
+      cta: 'Explore Projects',
+      slides: [
+        {
+          title: 'Field Inspections & QA/QC',
+          description: 'On-site QA/QC inspections, technical surveys and inspection reports to ensure compliance and safety.',
+          cta: 'View Field Inspections'
+        },
+        {
+          title: 'Offshore Monopile Projects',
+          description: 'End-to-end monopile fabrication, load-out and offshore installation support for renewable energy projects.',
+          cta: 'View Offshore Projects'
+        },
+        {
+          title: 'Industrial Coordination & Reporting',
+          description: 'Digital coordination systems, QA/QC reporting, and management dashboards for industrial execution.',
+          cta: 'Explore Coordination'
+        },
+        {
+          title: 'Pipeline Inspection & QA/QC',
+          description: 'Inline inspection, coating verification and pressure testing management for pipeline integrity and compliance.',
+          cta: 'Inspect Pipelines'
+        },
+        {
+          title: 'Field Team Coordination',
+          description: 'On-site coordination and technical oversight that keeps projects on schedule and within specification.',
+          cta: 'View Field Coordination'
+        },
+        {
+          title: 'Data Center Infrastructure',
+          description: 'Deployment support for mission-critical infrastructure including power, cooling and structured cabling.',
+          cta: 'Explore Data Centers'
+        },
+        {
+          title: 'Quality Monitoring & Critical Facilities',
+          description: 'Precision monitoring, documentation control and operational oversight for mission-critical environments.',
+          cta: 'See Monitoring'
+        },
+        {
+          title: 'Project Management & Coordination',
+          description: 'End-to-end project delivery, scheduling and stakeholder coordination to reduce risk and ensure milestones.',
+          cta: 'View Project Management'
+        },
+        {
+          title: 'Industrial Operations',
+          description: 'Operations support, maintenance planning and continuous improvement programs for industrial sites.',
+          cta: 'Explore Operations'
+        },
+        {
+          title: 'Technical Deployment & Commissioning',
+          description: 'Deployment engineering, commissioning and technical mobilisation to bring systems online reliably.',
+          cta: 'See Deployment Support'
+        }
+      ]
+    }
   },
   de: {
     nav: {
@@ -260,122 +318,60 @@ export const translations = {
     imageCarousel: {
       eyebrow: 'Industrielles Portfolio',
       title: 'Industrielle Lieferung im Fokus',
-      cta: 'Projekte ansehen'
+      cta: 'Projekte ansehen',
+      slides: [
+        {
+          title: 'Vor-Ort-Inspektionen & QA/QC',
+          description: 'QA/QC-Inspektionen vor Ort, technische Untersuchungen und Inspektionsberichte zur Sicherstellung von Compliance und Sicherheit.',
+          cta: 'Inspektionen ansehen'
+        },
+        {
+          title: 'Offshore-Monopile-Projekte',
+          description: 'Komplette Unterstützung bei Monopile-Fertigung, Verladung und Offshore-Installation für Erneuerbare-Energie-Projekte.',
+          cta: 'Offshore-Projekte'
+        },
+        {
+          title: 'Industrielle Koordination & Reporting',
+          description: 'Digitale Koordinationssysteme, QA/QC-Reporting und Management-Dashboards für industrielle Abläufe.',
+          cta: 'Koordination erkunden'
+        },
+        {
+          title: 'Pipeline-Inspektion & QA/QC',
+          description: 'Inline-Inspektion, Beschichtungsprüfung und Drucktest-Management zur Gewährleistung der Pipeline-Integrität.',
+          cta: 'Pipelines prüfen'
+        },
+        {
+          title: 'Feldteam-Koordination',
+          description: 'Vor-Ort-Koordination und technische Aufsicht, damit Projekte im Zeitplan und innerhalb der Spezifikation bleiben.',
+          cta: 'Koordination ansehen'
+        },
+        {
+          title: 'Data-Center-Infrastruktur',
+          description: 'Einsatzunterstützung für kritisch wichtige Infrastruktur, einschließlich Stromversorgung, Kühlung und strukturierte Verkabelung.',
+          cta: 'Data Centers'
+        },
+        {
+          title: 'Qualitätsüberwachung & Kritische Anlagen',
+          description: 'Präzise Überwachung, Dokumentationskontrolle und operative Aufsicht für mission-kritische Umgebungen.',
+          cta: 'Monitoring ansehen'
+        },
+        {
+          title: 'Projektmanagement & Koordination',
+          description: 'End-to-End-Projektabwicklung, Terminplanung und Stakeholder-Koordination zur Risikominimierung.',
+          cta: 'Projektmanagement'
+        },
+        {
+          title: 'Industrieller Betrieb',
+          description: 'Betriebsunterstützung, Instandhaltungsplanung und kontinuierliche Verbesserungsprogramme für Industrieanlagen.',
+          cta: 'Betrieb erkunden'
+        },
+        {
+          title: 'Technische Bereitstellung & Inbetriebnahme',
+          description: 'Einsatztechnik, Inbetriebnahme und technische Mobilisierung, um Systeme zuverlässig in Betrieb zu nehmen.',
+          cta: 'Bereitstellung ansehen'
+        }
+      ]
     },
-      imageCarousel: {
-        eyebrow: 'Industrielles Portfolio',
-        title: 'Industrielle Lieferung im Fokus',
-        cta: 'Projekte ansehen',
-        slides: [
-          {
-            title: 'Field Inspections & QA/QC',
-            description: 'On-site QA/QC inspections, technical surveys and inspection reports to ensure compliance and safety.',
-            cta: 'View Field Inspections'
-          },
-          {
-            title: 'Offshore Monopile Projects',
-            description: 'End-to-end monopile fabrication, load-out and offshore installation support for renewable energy projects.',
-            cta: 'View Offshore Projects'
-          },
-          {
-            title: 'Industrial Coordination & Reporting',
-            description: 'Digital coordination systems, QA/QC reporting, and management dashboards for industrial execution.',
-            cta: 'Explore Coordination'
-          },
-          {
-            title: 'Pipeline Inspection & QA/QC',
-            description: 'Inline inspection, coating verification and pressure testing management for pipeline integrity and compliance.',
-            cta: 'Inspect Pipelines'
-          },
-          {
-            title: 'Field Team Coordination',
-            description: 'On-site coordination and technical oversight that keeps projects on schedule and within specification.',
-            cta: 'View Field Coordination'
-          },
-          {
-            title: 'Data Center Infrastructure',
-            description: 'Deployment support for mission-critical infrastructure including power, cooling and structured cabling.',
-            cta: 'Explore Data Centers'
-          },
-          {
-            title: 'Quality Monitoring & Critical Facilities',
-            description: 'Precision monitoring, documentation control and operational oversight for mission-critical environments.',
-            cta: 'See Monitoring'
-          },
-          {
-            title: 'Project Management & Coordination',
-            description: 'End-to-end project delivery, scheduling and stakeholder coordination to reduce risk and ensure milestones.',
-            cta: 'View Project Management'
-          },
-          {
-            title: 'Industrial Operations',
-            description: 'Operations support, maintenance planning and continuous improvement programs for industrial sites.',
-            cta: 'Explore Operations'
-          },
-          {
-            title: 'Technical Deployment & Commissioning',
-            description: 'Deployment engineering, commissioning and technical mobilisation to bring systems online reliably.',
-            cta: 'See Deployment Support'
-          }
-        ]
-      },
-      imageCarousel: {
-        eyebrow: 'Industrielles Portfolio',
-        title: 'Industrielle Lieferung im Fokus',
-        cta: 'Projekte ansehen',
-        slides: [
-          {
-            title: 'Vor-Ort-Inspektionen & QA/QC',
-            description: 'QA/QC-Inspektionen vor Ort, technische Untersuchungen und Inspektionsberichte zur Sicherstellung von Compliance und Sicherheit.',
-            cta: 'Inspektionen ansehen'
-          },
-          {
-            title: 'Offshore-Monopile-Projekte',
-            description: 'Komplette Unterstützung bei Monopile-Fertigung, Verladung und Offshore-Installation für Erneuerbare-Energie-Projekte.',
-            cta: 'Offshore-Projekte'
-          },
-          {
-            title: 'Industrielle Koordination & Reporting',
-            description: 'Digitale Koordinationssysteme, QA/QC-Reporting und Management-Dashboards für industrielle Abläufe.',
-            cta: 'Koordination erkunden'
-          },
-          {
-            title: 'Pipeline-Inspektion & QA/QC',
-            description: 'Inline-Inspektion, Beschichtungsprüfung und Drucktest-Management zur Gewährleistung der Pipeline-Integrität.',
-            cta: 'Pipelines prüfen'
-          },
-          {
-            title: 'Feldteam-Koordination',
-            description: 'Vor-Ort-Koordination und technische Aufsicht, damit Projekte im Zeitplan und innerhalb der Spezifikation bleiben.',
-            cta: 'Koordination ansehen'
-          },
-          {
-            title: 'Data-Center-Infrastruktur',
-            description: 'Einsatzunterstützung für kritisch wichtige Infrastruktur, einschließlich Stromversorgung, Kühlung und strukturierte Verkabelung.',
-            cta: 'Data Centers'
-          },
-          {
-            title: 'Qualitätsüberwachung & Kritische Anlagen',
-            description: 'Präzise Überwachung, Dokumentationskontrolle und operative Aufsicht für mission-kritische Umgebungen.',
-            cta: 'Monitoring ansehen'
-          },
-          {
-            title: 'Projektmanagement & Koordination',
-            description: 'End-to-End-Projektabwicklung, Terminplanung und Stakeholder-Koordination zur Risikominimierung.',
-            cta: 'Projektmanagement'
-          },
-          {
-            title: 'Industrieller Betrieb',
-            description: 'Betriebsunterstützung, Instandhaltungsplanung und kontinuierliche Verbesserungsprogramme für Industrieanlagen.',
-            cta: 'Betrieb erkunden'
-          },
-          {
-            title: 'Technische Bereitstellung & Inbetriebnahme',
-            description: 'Einsatztechnik, Inbetriebnahme und technische Mobilisierung, um Systeme zuverlässig in Betrieb zu nehmen.',
-            cta: 'Bereitstellung ansehen'
-          }
-        ]
-      },
     about: {
       headline: 'Aus der Praxis gebaut. Durch Erfahrung angetrieben.',
       content: [
