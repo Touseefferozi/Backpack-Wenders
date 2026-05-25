@@ -14,7 +14,7 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
 
   const triggerClassName =
     tone === 'neutral'
-      ? 'inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/10'
+      ? 'inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/8'
       : 'inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-gray-900 transition hover:bg-accent-dark';
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
                       setOpen(false);
                     }
                   }}
-                  className="group rounded-[24px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-accent/30 hover:bg-white/[0.06]"
+                  className="group rounded-[24px] border border-white/10 bg-white/[0.03] p-5 transition hover:border-accent/25 hover:bg-white/[0.05]"
                 >
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-accent">
                     {index === 0 ? (

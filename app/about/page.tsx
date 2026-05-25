@@ -3,11 +3,15 @@ import { Navbar } from '@/components/navbar';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { AboutUsSection } from '@/components/about-us-section';
 import { Footer } from '@/components/footer';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'About | Backpack Wander GmbH',
-  description: 'Built on field experience and driven by practical engineering execution across global industrial projects.'
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata(
+    'About | Backpack Wander GmbH',
+    'Industrial engineering oversight, QA/QC discipline, and technical project support built on field experience.',
+    '/about'
+  );
+}
 
 export default function AboutPage() {
   return (

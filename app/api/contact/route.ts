@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   }
 
   // Destination email per user request
-  const toAddress = process.env.CONTACT_TO_EMAIL ?? 'info@backpackwander.de';
+  const toAddress = process.env.CONTACT_TO_EMAIL ?? 'info@backpackwander.com';
 
   // Compose email
   const subject = `Website inquiry from ${payload.name}`;
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
   const smtpPort = process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined;
   const smtpUser = process.env.SMTP_USER;
   const smtpPass = process.env.SMTP_PASS;
-  const fromAddress = process.env.SMTP_FROM ?? `no-reply@${process.env.NEXT_PUBLIC_SITE_DOMAIN ?? 'backpackwander.de'}`;
+  const fromAddress = process.env.SMTP_FROM ?? `no-reply@${process.env.NEXT_PUBLIC_SITE_DOMAIN ?? 'backpackwander.com'}`;
 
   if (smtpHost && smtpPort) {
     try {

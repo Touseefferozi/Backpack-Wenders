@@ -8,9 +8,9 @@ import { technicalDivisions } from '@/lib/site';
 import { useLanguage } from '@/components/language-provider';
 
 function LanguageFlag({ code }: { code: 'en' | 'de' }) {
-  if (code === 'de') {
+    if (code === 'de') {
     return (
-      <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-sm border border-white/15 shadow-sm" aria-hidden="true">
+      <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-sm border border-line shadow-sm" aria-hidden="true">
         <rect width="24" height="16" fill="#000000" />
         <rect y="5.33" width="24" height="5.34" fill="#dd0000" />
         <rect y="10.67" width="24" height="5.33" fill="#ffce00" />
@@ -19,7 +19,7 @@ function LanguageFlag({ code }: { code: 'en' | 'de' }) {
   }
 
   return (
-    <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-sm border border-white/15 shadow-sm" aria-hidden="true">
+    <svg viewBox="0 0 24 16" className="h-4 w-6 overflow-hidden rounded-sm border border-line shadow-sm" aria-hidden="true">
       <rect width="24" height="16" fill="#012169" />
       <path d="M0 0 L24 16 M24 0 L0 16" stroke="#ffffff" strokeWidth="3.2" />
       <path d="M0 0 L24 16 M24 0 L0 16" stroke="#C8102E" strokeWidth="1.6" />
@@ -93,8 +93,8 @@ export function Navbar() {
   return (
     <header className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
       isScrolled
-        ? 'border-white/5 bg-black/60 backdrop-blur-md'
-        : 'border-white/10 bg-white/4 bg-clip-padding backdrop-blur-md'
+        ? 'border-line bg-background/60 backdrop-blur-md'
+        : 'border-line bg-background/4 bg-clip-padding backdrop-blur-md'
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
@@ -106,7 +106,7 @@ export function Navbar() {
             priority
             className="h-10 w-auto object-contain"
           />
-          <span className="hidden text-sm font-semibold tracking-[0.28em] text-white sm:inline">
+          <span className="hidden text-sm font-semibold tracking-[0.28em] text-offwhite sm:inline">
             BACKPACK WANDER
           </span>
         </Link>
@@ -116,7 +116,7 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm text-slate-300 transition hover:text-accent"
+              className="text-sm text-offwhite/70 transition hover:text-accent"
             >
               {item.label}
             </Link>
@@ -126,24 +126,24 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setDropdownOpen((value) => !value)}
-              className="inline-flex items-center gap-1 text-sm text-slate-300 transition hover:text-accent"
+              className="inline-flex items-center gap-1 text-sm text-offwhite/70 transition hover:text-accent"
             >
               {content.nav.ecosystem} <ChevronDown className="h-4 w-4" />
             </button>
 
             {dropdownOpen ? (
-              <div className="absolute right-0 top-10 w-64 overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-industrial">
+              <div className="absolute right-0 top-10 w-64 overflow-hidden rounded-2xl border border-line bg-surface shadow-industrial">
                 {technicalDivisions.map((division) => (
                   <a
                     key={division.label}
                     href={division.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block border-b border-white/10 px-4 py-4 text-sm transition last:border-b-0 hover:bg-white/5"
+                    className="block border-b border-line px-4 py-4 text-sm transition last:border-b-0 hover:bg-surface/70"
                     onClick={() => setDropdownOpen(false)}
                   >
-                    <div className="font-semibold text-white">{division.label}</div>
-                    <div className="mt-1 text-xs text-slate-400">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
+                    <div className="font-semibold text-offwhite">{division.label}</div>
+                    <div className="mt-1 text-xs text-offwhite/70">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
                   </a>
                 ))}
               </div>
@@ -154,7 +154,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setLanguageOpen((value) => !value)}
-              className="inline-flex min-w-[160px] items-center justify-between gap-3 rounded-lg border border-white/10 bg-white/5 px-4 py-2 text-sm text-white transition hover:border-accent/40"
+              className="inline-flex min-w-[160px] items-center justify-between gap-3 rounded-lg border border-line bg-white/3 px-4 py-2 text-sm text-offwhite transition hover:border-accent/40"
               aria-label={content.nav.selectLanguage}
             >
               <span className="inline-flex items-center gap-2 font-medium">
@@ -164,14 +164,14 @@ export function Navbar() {
               <ChevronDown className={`h-4 w-4 transition ${languageOpen ? 'rotate-180' : ''}`} />
             </button>
 
-            {languageOpen ? (
-              <div className="absolute right-0 top-12 w-52 overflow-hidden rounded-xl border border-white/10 bg-surface shadow-industrial">
+              {languageOpen ? (
+              <div className="absolute right-0 top-12 w-52 overflow-hidden rounded-xl border border-line bg-surface shadow-industrial">
                 {options.map((option) => (
                   <button
                     key={option.code}
                     type="button"
                     onClick={() => handleLanguageSelect(option.code)}
-                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-white transition hover:bg-white/5"
+                    className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-offwhite transition hover:bg-surface/70"
                   >
                     <LanguageFlag code={option.code} />
                     <span>{option.label}</span>
@@ -184,7 +184,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-line bg-white/3 p-2 text-offwhite lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-label="Toggle navigation"
         >
@@ -193,20 +193,20 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-white/10 bg-background px-4 py-5 lg:hidden">
+        <div className="border-t border-line bg-background px-4 py-5 lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:px-2">
             {navigation.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-base text-slate-200 transition hover:text-accent"
+                className="text-base text-offwhite/70 transition hover:text-accent"
               >
                 {item.label}
               </Link>
             ))}
             <div className="pt-2">
-              <p className="text-xs uppercase tracking-[0.28em] text-slate-500">{content.nav.ecosystem}</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-offwhite/60">{content.nav.ecosystem}</p>
               <div className="mt-3 grid gap-2">
                 {technicalDivisions.map((division) => (
                   <a
@@ -215,10 +215,10 @@ export function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                    className="rounded-2xl border border-line bg-white/3 px-4 py-3 text-sm text-offwhite/70"
                   >
                     <div className="font-semibold">{division.label}</div>
-                    <div className="text-xs text-slate-400">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
+                    <div className="text-xs text-offwhite/70">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
                   </a>
                 ))}
               </div>

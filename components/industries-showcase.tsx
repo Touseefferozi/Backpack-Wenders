@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
 import { useLanguage } from '@/components/language-provider';
+import { norm } from '@/lib/normalizeImage';
+import { translations } from '@/lib/translations';
 
 interface IndustryCard {
   title: string;
@@ -11,105 +13,49 @@ interface IndustryCard {
   alt: string;
 }
 
+interface IndustryText {
+  title: string;
+  description: string;
+}
+
 export function IndustriesShowcase() {
-  const { language } = useLanguage();
+  const { content } = useLanguage();
 
-  // Hardcoded data with translations
-  const industriesData: Record<'en' | 'de', IndustryCard[]> = {
-    en: [
-      {
-        title: 'Offshore & Renewable Energy',
-        description: 'Monopiles, offshore wind platforms, and subsea infrastructure QA/QC',
-        image: '/Images/offshore-wind-turbine-fixation.png',
-        alt: 'Offshore monopile fabrication and installation'
-      },
-      {
-        title: 'Pipelines & Refineries',
-        description: 'High-pressure pipeline systems and refinery infrastructure inspection',
-        image: '/Images/Pipelines & Refineries.png',
-        alt: 'Pipeline construction and inspection site'
-      },
-      {
-        title: 'Industrial Oversight & Documentation',
-        description: 'QA/QC documentation control, reporting workflows, and engineering oversight for industrial operations',
-        image: '/Images/Enterprise Project Management.png',
-        alt: 'Digital industrial project control dashboard'
-      },
-      {
-        title: 'Data Centers & Critical Facilities',
-        description: 'Mission-critical infrastructure deployment and commissioning oversight',
-        image: '/Images/Data center critical.png',
-        alt: 'Data center critical infrastructure'
-      },
-      {
-        title: 'Technical Field Operations',
-        description: 'On-site QA/QC coordination, NDT inspection, and quality assurance',
-        image: '/Images/Technical Field Operations.png',
-        alt: 'Field inspection team conducting QA/QC'
-      },
-      {
-        title: 'Enterprise Project Management',
-        description: 'Digital coordination systems and real-time project tracking dashboards',
-        image: '/Images/Enterprise Project Management.png',
-        alt: 'Project management and technical coordination meeting'
-      }
-    ],
-    de: [
-      {
-        title: 'Offshore & Erneuerbare Energien',
-        description: 'Monopiles, Offshore-Windplattformen und Subsea-Infrastruktur QA/QC',
-        image: '/Images/offshore-wind-turbine-fixation.png',
-        alt: 'Offshore-Monopile-Montage und Installation'
-      },
-      {
-        title: 'Pipelines & Raffinerien',
-        description: 'Hochdruckrohrleitungssysteme und Raffinerieinfrastruktur-Inspektionen',
-        image: '/Images/Pipelines & Refineries.png',
-        alt: 'Pipelinebau und Inspektionsbereich'
-      },
-      {
-        title: 'Industrielle Überwachung & Dokumentation',
-        description: 'QA/QC-Dokumentationssteuerung, Reporting-Workflows und technische Aufsicht für den Industriebetrieb',
-        image: '/Images/Enterprise Project Management.png',
-        alt: 'Digitales Dashboard für industrielle Projektsteuerung'
-      },
-      {
-        title: 'Rechenzentren & Kritische Anlagen',
-        description: 'Einsatz von mission-kritischer Infrastruktur und Inbetriebnahme-Überwachung',
-        image: '/Images/Data center critical.png',
-        alt: 'Rechenzentrum mit kritischer Infrastruktur'
-      },
-      {
-        title: 'Technische Feldeinsätze',
-        description: 'Vor-Ort-Koordination QA/QC, NDT-Inspektionen und Qualitätssicherung',
-        image: '/Images/Technical Field Operations.png',
-        alt: 'Inspektionsteam führt vor Ort QA/QC durch'
-      },
-      {
-        title: 'Unternehmens-Projektmanagement',
-        description: 'Digitale Koordinationssysteme und Echtzeit-Projekt-Tracking-Dashboards',
-        image: '/Images/Enterprise Project Management.png',
-        alt: 'Projektmanagement und technisches Koordinierungstreffen'
-      }
-    ]
+  // image and alt assets (kept local) — content titles/descriptions come from translations
+  const srcList = [
+    norm('/Images/offshore-wind-turbine-fixation.png'),
+    norm('/Images/Pipelines & Refineries.png'),
+    norm('/Images/Heavy Construction.png'),
+    norm('/Images/Data center critical.png'),
+    norm('/Images/Technical Field Operations.png'),
+    norm('/Images/Enterprise Project Management.png')
+  ];
+
+  const altList = [
+    'Offshore monopile fabrication and installation',
+    'Pipeline construction and inspection site',
+    'Large-scale industrial construction, welding, and structural integrity',
+    'Data center critical infrastructure',
+    'Field inspection team conducting QA/QC',
+    'Project management and technical coordination meeting'
+  ];
+
+  const industriesSource = (content?.industriesShowcase?.industries ?? translations.en.industriesShowcase.industries) as readonly IndustryText[];
+
+  const industries = industriesSource.map((item: IndustryText, i: number) => ({
+    title: item.title,
+    description: item.description,
+    image: srcList[i] ?? '/Images/Enterprise Project Management.png',
+    alt: altList[i] ?? item.title
+  }));
+
+  const headerSource = content?.industriesShowcase ?? translations.en.industriesShowcase;
+
+  const header = {
+    eyebrow: headerSource.eyebrow,
+    title: headerSource.title,
+    subtitle: headerSource.subtitle
   };
-
-  const industries = industriesData[language];
-
-  const headerTexts: Record<'en' | 'de', {eyebrow: string; title: string; subtitle: string}> = {
-    en: {
-      eyebrow: 'Global Expertise',
-      title: 'Industries We Serve',
-      subtitle: 'From offshore energy to mission-critical facilities, we deploy precision expertise across industrial sectors worldwide.'
-    },
-    de: {
-      eyebrow: 'Globale Expertise',
-      title: 'Branchen, in denen wir tätig sind',
-      subtitle: 'Von Offshore-Energie bis zu mission-kritischen Anlagen entfalten wir spezialisierte Expertise weltweit in industriellen Bereichen.'
-    }
-  };
-
-  const header = headerTexts[language];
 
   return (
     <section className="border-b border-white/10 py-20 sm:py-28 lg:py-32">
@@ -130,10 +76,10 @@ export function IndustriesShowcase() {
         </Reveal>
 
         {/* Image Grid */}
-        <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((industry) => (
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+          {industries.map((industry: IndustryCard) => (
             <Reveal key={industry.title}>
-              <div className="group relative h-72 overflow-hidden rounded-[24px] border border-white/10 shadow-industrial transition duration-300 hover:border-accent/30 hover:shadow-lg">
+              <div className="group relative h-72 overflow-hidden rounded-[24px] border border-white/10 shadow-industrial transition duration-300 hover:border-accent/25">
                 {/* Background Image */}
                 <Image
                   src={industry.image}
@@ -144,8 +90,7 @@ export function IndustriesShowcase() {
                 />
 
                 {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent opacity-0 transition group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,4,0.1)_0%,rgba(2,3,4,0.82)_100%)]" />
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">

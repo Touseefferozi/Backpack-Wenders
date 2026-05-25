@@ -13,7 +13,8 @@ export function ClosingCTASection() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-left">
-            <h2 className="font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">Technical Oversight</p>
+            <h2 className="mt-4 font-display text-4xl font-semibold text-white sm:text-5xl lg:text-6xl">
               {content.closing.headline}
             </h2>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-white/82 sm:text-xl">

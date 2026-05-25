@@ -1,9 +1,13 @@
 export const siteConfig = {
   name: 'Backpack Wander GmbH',
   url: 'https://backpackwander.com',
+  domains: {
+    en: 'https://backpackwander.com',
+    de: 'https://backpackwander.de'
+  },
   talentIntakeUrl: 'https://backpackwander.com/contact',
   description:
-    'Premium QA/QC engineering services, field operations, and technical deployment for industrial, energy, and infrastructure projects worldwide.'
+    'Industrial engineering support, QA/QC oversight, offshore wind expertise, technical documentation, and engineering coordination for global projects.'
 };
 
 export const navigation = [
@@ -16,12 +20,12 @@ export const navigation = [
 export const technicalDivisions = [
   {
     label: 'Pipeline Quality',
-    description: 'QA/QC, Inspection & Commissioning',
+    description: 'Primary industrial engineering and quality division',
     url: 'https://pipelinequality.com'
   },
   {
     label: 'BW Digit',
-    description: 'Industrial Software & Technical Digital Solutions',
+    description: 'Supporting digital documentation and workflow systems',
     url: 'https://bwdigit.com'
   }
 ];
@@ -137,7 +141,7 @@ export const supportGatewayOptions = [
 export const footerInfo = {
   company: 'Backpack Wander GmbH',
   tagline: 'Registered in Germany | International B2B Technical Deployment',
-  email: 'contact@backpackwander.com',
+  email: 'info@backpackwander.com',
   socialLinks: [
     { platform: 'LinkedIn', url: 'https://linkedin.com' }
   ]

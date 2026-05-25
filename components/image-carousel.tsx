@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Reveal } from '@/components/reveal';
+import { useLanguage } from '@/components/language-provider';
 
 interface CarouselImage {
   src: string;
@@ -119,32 +120,20 @@ export function ImageCarousel() {
     setTimeout(() => setAutoPlay(true), 8000);
   };
 
-  const currentImage = images[currentIndex];
+  const currentImage = images[currentIndex] ?? images[0];
+  // localized title/description/cta from language provider
+  const { content } = useLanguage();
+  const slideContent = (content.imageCarousel as any)?.slides?.[currentIndex];
+  const title = slideContent?.title ?? currentImage.title;
+  const description = slideContent?.description ?? currentImage.description;
+  const cta = slideContent?.cta ?? currentImage.cta;
 
   return (
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(215,164,74,0.20),transparent_42%),linear-gradient(180deg,#08110c_0%,#050805_100%)]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal>
-          <div className="mb-12 text-left sm:mb-14 lg:mb-16">
-            <motion.h2
-              key={`section-title-${currentIndex}`}
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45 }}
-              className="font-display text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-6xl"
-            >
-              Unlock Your Potential With
-            </motion.h2>
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.45, delay: 0.15 }}
-              className="mx-auto mt-5 h-0.5 w-16 origin-center rounded-full bg-accent/65"
-            />
-          </div>
-        </Reveal>
+        {/* Title section removed to avoid duplicating the hero headline */}
 
         <Reveal>
           <div className="rounded-[28px] border border-accent/10 bg-black/55 p-4 shadow-[0_30px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:p-5 lg:p-6">
@@ -168,9 +157,9 @@ export function ImageCarousel() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -18 }}
                       transition={{ duration: 0.45, ease: 'easeOut' }}
-                      className="mt-5 max-w-xl text-3xl font-semibold leading-[1.02] text-white sm:text-4xl lg:text-[3.5rem]"
+                      className="mt-5 max-w-2xl sm:max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[2.6rem] tracking-tight break-words whitespace-normal"
                     >
-                      {currentImage.title}
+                      {title}
                     </motion.h3>
                   </AnimatePresence>
 
@@ -183,7 +172,7 @@ export function ImageCarousel() {
                       transition={{ duration: 0.45, delay: 0.08, ease: 'easeOut' }}
                       className="mt-6 max-w-xl text-sm leading-7 text-white/82 sm:text-base sm:leading-7 lg:text-lg"
                     >
-                      {currentImage.description}
+                      {description}
                     </motion.p>
                   </AnimatePresence>
                 </div>
@@ -194,8 +183,8 @@ export function ImageCarousel() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, delay: 0.16 }}
                   >
-                    <button className="inline-flex w-full min-w-[190px] items-center justify-center rounded-full border border-white/85 bg-accent px-8 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(215,164,74,0.18)] transition duration-300 hover:bg-accent-soft hover:shadow-[0_0_34px_rgba(215,164,74,0.28)] sm:w-auto">
-                      {currentImage.cta ?? 'Explore Project'}
+                      <button className="inline-flex w-full min-w-[190px] items-center justify-center rounded-full border border-white/85 bg-accent px-8 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(215,164,74,0.18)] transition duration-300 hover:bg-accent-soft hover:shadow-[0_0_34px_rgba(215,164,74,0.28)] sm:w-auto">
+                      {cta ?? 'Explore Project'}
                     </button>
                   </motion.div>
 

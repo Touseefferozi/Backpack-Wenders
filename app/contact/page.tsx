@@ -1,14 +1,19 @@
 import type { Metadata } from 'next';
 import { ContactForm } from '@/components/contact-form';
+import { ContactHeader } from '@/components/contact-header';
 import { Footer } from '@/components/footer';
 import { Navbar } from '@/components/navbar';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { footerInfo, siteConfig } from '@/lib/site';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Contact Backpack Wander GmbH for technical support, industrial staffing, and digital delivery.'
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata(
+    'Contact | Backpack Wander GmbH',
+    'Contact Backpack Wander GmbH for QA/QC oversight, offshore wind support, documentation control, and industrial engineering coordination.',
+    '/contact'
+  );
+}
 
 export default function ContactPage() {
   return (
@@ -16,110 +21,53 @@ export default function ContactPage() {
       <ScrollProgress />
       <Navbar />
       <main className="relative overflow-hidden pt-28">
-        <div className="absolute inset-0 -z-10 bg-[#06110b]" />
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(87,196,138,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(74,222,128,0.08),transparent_40%)]" />
-        
+        <div className="absolute inset-0 -z-10 bg-[#020304]" />
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(2,3,4,0.96),rgba(5,7,7,1))]" />
+
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-          {/* Page Header */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#1f7a5a]/20 bg-[#05221a]/40 px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[#bfeed8]/90">
-              <div className="h-1.5 w-1.5 rounded-full bg-[#19d88f]" />
-              Get in Touch
-            </div>
-            <h1 className="mt-6 text-5xl font-bold tracking-tight text-white sm:text-6xl">
-              <span className="text-[#19d88f]">Contact</span> Us
-            </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-[#cfeee1]/75">
-              Have questions or need assistance? We&apos;re here to help you plan your perfect adventure.
-            </p>
-          </div>
+          <ContactHeader />
 
-          {/* Two Column Layout */}
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Left Column - Contact Info */}
+          <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
             <section className="space-y-8">
-              {/* Get in Touch Section */}
-              <div className="rounded-3xl border border-[#1f7a5a]/20 bg-gradient-to-br from-[#05221a]/50 to-[#06261a]/30 p-8 backdrop-blur-sm">
-                <h2 className="text-2xl font-bold text-white">Get in Touch</h2>
-                
+              <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8">
+                <h2 className="text-2xl font-semibold text-white">Project Coordination</h2>
+
                 <div className="mt-8 space-y-6">
-                  {/* Address */}
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#19d88f]/10 flex-shrink-0">
-                      <svg className="h-5 w-5 text-[#19d88f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#bfeed8]/80">Address</p>
-                      <p className="mt-1 text-sm text-[#cfeee1]/85">Backpack Wander GmbH<br />Registered in Germany</p>
-                    </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">Office</p>
+                    <p className="mt-2 text-sm leading-6 text-offwhite/82">Backpack Wander GmbH<br />Registered in Germany</p>
                   </div>
 
-                  {/* Phone */}
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#19d88f]/10 flex-shrink-0">
-                      <svg className="h-5 w-5 text-[#19d88f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#bfeed8]/80">Response Time</p>
-                      <p className="mt-1 text-sm text-[#cfeee1]/85">Within 24 business hours</p>
-                    </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">Response Window</p>
+                    <p className="mt-2 text-sm leading-6 text-offwhite/82">Within 24 business hours</p>
                   </div>
 
-                  {/* Email */}
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#19d88f]/10 flex-shrink-0">
-                      <svg className="h-5 w-5 text-[#19d88f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#bfeed8]/80">Email</p>
-                      <a href={`mailto:${footerInfo.email}`} className="mt-1 text-sm text-[#cfeee1]/85 hover:text-[#79e7b2] transition">
-                        {footerInfo.email}
-                      </a>
-                    </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">Email</p>
+                    <a href={`mailto:${footerInfo.email}`} className="mt-2 block text-sm leading-6 text-offwhite/82 transition hover:text-accent">
+                      {footerInfo.email}
+                    </a>
                   </div>
 
-                  {/* Business Hours */}
-                  <div className="flex gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#19d88f]/10 flex-shrink-0">
-                      <svg className="h-5 w-5 text-[#19d88f]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-widest text-[#bfeed8]/80">Business Hours</p>
-                      <p className="mt-1 text-sm text-[#cfeee1]/85">Monday to Friday: 9:00 AM – 4:00 PM</p>
-                      <p className="mt-1 text-sm text-[#cfeee1]/85">Weekend: 10:00 AM – 4:00 PM</p>
-                    </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/55">Focus</p>
+                    <p className="mt-2 text-sm leading-6 text-offwhite/82">QA/QC, offshore wind, pipeline quality, documentation, and engineering oversight.</p>
                   </div>
                 </div>
               </div>
 
-              {/* Map Embed */}
-              <div className="rounded-3xl border border-[#1f7a5a]/20 overflow-hidden bg-[#05221a]/40 backdrop-blur-sm h-64 lg:h-80">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2623.142857142857!2d8.681921!3d50.113516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd6c97f0f0f0f1%3A0x1234567890abcdef!2sBackpack%20Wender%20GmbH!5e0!3m2!1sen!2sde!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                />
+              <div className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8">
+                <h2 className="text-2xl font-semibold text-white">Primary Division</h2>
+                <p className="mt-4 text-sm leading-7 text-offwhite/82">
+                  Pipeline Quality is the core industrial quality and oversight division, focused on execution control, reporting discipline, and site verification.
+                </p>
               </div>
             </section>
 
-            {/* Right Column - Contact Form */}
-            <section className="rounded-3xl border border-[#1f7a5a]/20 bg-gradient-to-br from-[#05221a]/50 to-[#06261a]/30 p-8 backdrop-blur-sm h-fit sticky top-32">
-              <h2 className="text-2xl font-bold text-white">Send us a Message</h2>
-              <p className="mt-2 text-sm text-[#cfeee1]/75">Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
+            <section className="rounded-[28px] border border-white/10 bg-white/[0.03] p-8 h-fit lg:sticky lg:top-32">
+              <h2 className="text-2xl font-semibold text-white">Send a Technical Enquiry</h2>
+              <p className="mt-2 text-sm text-offwhite/75">Share the project scope, location, and timeline. We will respond with a suitable technical path.</p>
               
               <ContactForm />
             </section>

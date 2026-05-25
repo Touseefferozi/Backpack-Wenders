@@ -9,11 +9,11 @@ export function DeploymentModelSection() {
   return (
     <section id="deployment" className="border-b border-white/10 py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2">
-          {/* Enterprise */}
+        <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr]">
           <Reveal>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 transition hover:border-accent/30 hover:bg-white/[0.06]">
-              <h3 className="text-2xl font-bold text-white">
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-8 transition hover:border-accent/30 hover:bg-white/[0.05]">
+              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-accent/90">Primary Division</p>
+              <h3 className="mt-3 text-2xl font-semibold text-white">
                 {content.deployment.enterpriseTitle}
               </h3>
               <p className="mt-6 text-base leading-7 text-white/82">
@@ -21,11 +21,11 @@ export function DeploymentModelSection() {
               </p>
             </div>
           </Reveal>
-        
-          {/* Experts */}
+
           <Reveal>
-            <div className="rounded-2xl border border-accent/20 bg-gradient-to-br from-accent/10 via-transparent to-transparent p-8">
-              <h3 className="text-2xl font-bold text-white">
+            <div className="rounded-[24px] border border-white/10 bg-white/[0.03] p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.36em] text-accent/80">Supporting Division</p>
+              <h3 className="mt-3 text-2xl font-semibold text-white">
                 {content.deployment.expertsTitle}
               </h3>
               <p className="mt-6 text-base leading-7 text-white/82">

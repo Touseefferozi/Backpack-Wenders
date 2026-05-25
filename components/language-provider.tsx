@@ -3,6 +3,33 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { languageOptions, translations, type LanguageCode, type LanguageOption, type Translations } from '@/lib/translations';
 
+type PlainObject = Record<string, unknown>;
+
+function isPlainObject(value: unknown): value is PlainObject {
+  return typeof value === 'object' && value !== null && !Array.isArray(value);
+}
+
+function deepMerge<T extends PlainObject>(base: T, override?: Partial<T>): T {
+  if (!override) return base;
+
+  const result: PlainObject = { ...base };
+
+  for (const key of Object.keys(override)) {
+    const baseVal = base[key];
+    const overVal = override[key as keyof T];
+
+    if (overVal === undefined) continue;
+
+    if (isPlainObject(baseVal) && isPlainObject(overVal)) {
+      result[key] = deepMerge(baseVal, overVal as Partial<typeof baseVal>);
+    } else {
+      result[key] = overVal;
+    }
+  }
+
+  return result as T;
+}
+
 type LanguageContextValue = {
   language: LanguageCode;
   setLanguage: (language: LanguageCode) => void;
@@ -12,8 +39,8 @@ type LanguageContextValue = {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<LanguageCode>('en');
+export function LanguageProvider({ children, initialLanguage = 'en' }: { children: React.ReactNode; initialLanguage?: LanguageCode }) {
+  const [language, setLanguageState] = useState<LanguageCode>(initialLanguage);
 
   useEffect(() => {
     if (typeof window === 'undefined') {
@@ -21,7 +48,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
 
     const storedLanguage = window.localStorage.getItem('preferred-language') as LanguageCode | null;
-    const selected = storedLanguage === 'de' ? 'de' : 'en';
+    const hostnameLanguage = window.location.hostname.endsWith('.de') ? 'de' : 'en';
+    const selected = storedLanguage === 'de' || storedLanguage === 'en' ? storedLanguage : hostnameLanguage;
     setLanguageState(selected);
   }, []);
 
@@ -35,15 +63,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = option?.htmlLang ?? 'en';
   }, [language]);
 
-  const value = useMemo<LanguageContextValue>(
-    () => ({
+  const value = useMemo<LanguageContextValue>(() => {
+    const merged = deepMerge(translations.en as Translations, translations[language] as Partial<Translations>);
+
+    return {
       language,
       setLanguage: setLanguageState,
       options: languageOptions,
-      content: translations[language]
-    }),
-    [language]
-  );
+      content: merged
+    };
+  }, [language]);
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 }

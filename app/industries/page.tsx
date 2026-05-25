@@ -5,11 +5,15 @@ import { InfrastructureSection } from '@/components/infrastructure-section';
 import { DisciplinesSection } from '@/components/disciplines-section';
 import { StandardsSection } from '@/components/standards-section';
 import { Footer } from '@/components/footer';
+import { buildPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Industries | Backpack Wander GmbH',
-  description: 'Technical deployment across offshore wind, heavy industry, pipelines, refineries, and mission-critical infrastructure.'
-};
+export async function generateMetadata(): Promise<Metadata> {
+  return buildPageMetadata(
+    'Industries | Backpack Wander GmbH',
+    'Offshore wind, pipelines, refineries, heavy industry, and critical facilities supported through QA/QC and technical oversight.',
+    '/industries'
+  );
+}
 
 export default function IndustriesPage() {
   return (

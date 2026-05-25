@@ -12,22 +12,14 @@ import { DeploymentModelSection } from '@/components/deployment-model-section';
 import { ClosingCTASection } from '@/components/closing-cta-section';
 import { Footer } from '@/components/footer';
 import { siteConfig } from '@/lib/site';
+import { buildPageMetadata } from '@/lib/seo';
 
 export async function generateMetadata(): Promise<Metadata> {
-  return {
-    title: 'Heavy Industries Demand Precision | Backpack Wander',
-    description: siteConfig.description,
-    alternates: {
-      canonical: siteConfig.url
-    },
-    openGraph: {
-      title: 'Backpack Wander GmbH | Engineering Excellence Meets Digital Innovation',
-      description: siteConfig.description,
-      url: siteConfig.url,
-      siteName: siteConfig.name,
-      type: 'website'
-    }
-  };
+  return buildPageMetadata(
+    'Industrial Engineering Oversight | Backpack Wander GmbH',
+    siteConfig.description,
+    '/'
+  );
 }
 
 export default function HomePage() {

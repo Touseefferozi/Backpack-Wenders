@@ -37,31 +37,31 @@ export const translations = {
       selectLanguage: 'Select language'
     },
     hero: {
-      headline: 'Heavy Industries Demand Precision.We Deploy Trusted Technical Experts Worldwide.',
+      headline: 'Heavy Industries Demand Precision.We Deploy Trusted Technical Experts Worldwide',
       subheadline:
         'Backpack Wander GmbH connects industrial companies with vetted QA/QC inspectors, field engineers, commissioning specialists, HSE professionals, and technical experts for high-stakes infrastructure projects worldwide. From offshore wind and pipelines to refineries, energy facilities, and mission-critical infrastructure, we deliver compliant, field-proven execution under a trusted German GmbH framework.',
       joinNetwork: 'Join the Network'
     },
     supportGateway: {
       button: 'Request Technical Support',
-      eyebrow: 'Technical Gateway',
-      title: 'Select your technical path',
+      eyebrow: 'Industrial Gateway',
+      title: 'Select the technical division that fits your project',
       continue: 'Continue',
       closeAria: 'Close support gateway',
       options: [
         {
-          title: 'QA/QC, Inspection, or Commissioning Support',
-          description: 'Field-ready specialists for mechanical completion, quality assurance, and site commissioning.',
+          title: 'Pipeline Quality',
+          description: 'Primary QA/QC, inspection, and commissioning oversight for offshore wind, pipelines, refineries, and heavy industry.',
           url: 'https://pipelinequality.com'
         },
         {
-          title: 'Industrial Software or Technical Digital Solutions',
-          description: 'Digital workflows, reporting tools, documentation systems, and industrial software enablement.',
+          title: 'BW Digit',
+          description: 'Supporting digital documentation, reporting, and technical workflow systems for industrial delivery.',
           url: 'https://bwdigit.com'
         },
         {
-          title: 'General Inquiries & Corporate Partnerships',
-          description: 'Commercial introductions, strategic delivery support, and long-term partnership discussions.',
+          title: 'Corporate Enquiries',
+          description: 'Direct industrial project discussions, partnership requests, and technical scope reviews.',
           url: '#contact'
         }
       ]
@@ -143,15 +143,15 @@ export const translations = {
         'Operate your freelance business through a trusted international engineering network built around real field experience. We connect independent QA/QC inspectors, engineers, commissioning specialists, coordinators, and HSE professionals with industrial and energy projects worldwide — while supporting transparent collaboration, fair contract structures, and compliant B2B engagement.'
     },
     closing: {
-      headline: 'Ready to Reinforce Your Project?',
+      headline: 'Need Technical Oversight on a Critical Project?',
       description:
-        'Whether you require QA/QC specialists, inspection support, commissioning professionals, field engineers, or complete technical project reinforcement, Backpack Wander GmbH connects you with experienced experts ready for complex international projects.',
-      joinNetwork: 'Join the Network'
+        'Whether you need offshore wind inspection support, pipeline quality control, industrial documentation, or on-site engineering oversight, Backpack Wander GmbH supports complex industrial delivery with a disciplined corporate framework.',
+      joinNetwork: 'Contact the Team'
     },
     footer: {
       brandDescription:
-        'Premium QA/QC engineering services, field operations, and technical deployment for industrial, energy, and infrastructure projects worldwide.',
-      divisions: 'Our Technical Divisions',
+        'Industrial engineering oversight, QA/QC, offshore wind support, technical documentation, and project coordination for international industrial delivery.',
+      divisions: 'Company Divisions',
       company: 'Company',
       contactLegal: 'Contact & Legal',
       email: 'Email',
@@ -168,8 +168,8 @@ export const translations = {
       rights: '© 2026 Backpack Wander GmbH. All rights reserved.'
     },
     contactPage: {
-      title: 'Get in Touch',
-      subtitle: 'Have a question or project in mind? Let us know how we can help.'
+      title: 'Technical Contact',
+      subtitle: 'Discuss industrial QA/QC, offshore wind support, documentation, or engineering oversight with our team.'
     },
     contactForm: {
       name: 'Name',
@@ -183,35 +183,36 @@ export const translations = {
       sending: 'Sending…',
       send: "Let's Talk",
       success: 'Your inquiry has been received.',
+      error: 'Something went wrong. Please try again.'
     },
     industriesShowcase: {
-      eyebrow: 'Global Expertise',
-      title: 'Industries We Serve',
-      subtitle: 'From offshore energy to mission-critical facilities, we deploy precision expertise across industrial sectors worldwide.',
+      eyebrow: 'Industrial Sectors',
+      title: 'Where Pipeline Quality Delivers',
+      subtitle: 'From offshore wind fabrication to refineries and critical infrastructure, we support industrial projects where precision, documentation, and control matter most.',
       industries: [
         {
-          title: 'Offshore & Renewable Energy',
-          description: 'Monopiles, offshore wind platforms, and subsea infrastructure QA/QC'
+          title: 'Offshore Wind & Renewables',
+          description: 'Monopiles, offshore structures, subsea assets, and fabrication oversight'
         },
         {
           title: 'Pipelines & Refineries',
-          description: 'High-pressure pipeline systems and refinery infrastructure inspection'
+          description: 'Welding surveillance, coating inspection, and integrity documentation'
         },
         {
-          title: 'Heavy Construction',
-          description: 'Large-scale industrial construction, welding, and structural integrity'
+          title: 'Heavy Industry',
+          description: 'Fabrication halls, structural checks, lifting operations, and dimensional control'
         },
         {
-          title: 'Data Centers & Critical Facilities',
-          description: 'Mission-critical infrastructure deployment and commissioning oversight'
+          title: 'Critical Facilities',
+          description: 'Technical oversight for mission-critical environments and delivery control'
         },
         {
-          title: 'Technical Field Operations',
-          description: 'On-site QA/QC coordination, NDT inspection, and quality assurance'
+          title: 'Technical Field Oversight',
+          description: 'QA/QC coordination, inspection reporting, and site discipline'
         },
         {
-          title: 'Enterprise Project Management',
-          description: 'Digital coordination systems and real-time project tracking dashboards'
+          title: 'Industrial Documentation',
+          description: 'Reporting workflows, technical records, and handover documentation'
         }
       ]
     }
@@ -227,35 +228,154 @@ export const translations = {
       selectLanguage: 'Sprache auswählen'
     },
     hero: {
-      headline: 'Schwerindustrie verlangt Präzision. Wir entsenden weltweit verlässliche technische Experten.',
+      headline: 'Industrielle technische Überwachung für komplexe Projekte weltweit.',
       subheadline:
-        'Backpack Wander GmbH verbindet Industrieunternehmen mit geprüften QA/QC-Inspektoren, Field Engineers, Inbetriebnahme-Spezialisten, HSE-Fachkräften und technischen Experten für kritische Infrastrukturprojekte weltweit. Von Offshore-Wind und Pipelines bis zu Raffinerien, Energieanlagen und mission-kritischer Infrastruktur liefern wir normgerechte, praxiserprobte Umsetzung unter einem verlässlichen deutschen GmbH-Rahmen.',
-      joinNetwork: 'Dem Netzwerk beitreten'
+        'Backpack Wander GmbH bietet QA/QC-Überwachung, Offshore-Wind-Expertise, technische Dokumentation, Inspektionssupport und ingenieurtechnische Koordination für Industrieprojekte mit hohen Anforderungen. Pipeline Quality ist die primäre Division; BW Digit unterstützt digitale Workflows und Dokumentationssysteme.',
+      joinNetwork: 'Technische Überwachung anfragen'
     },
     supportGateway: {
-      button: 'Technischen Support anfragen',
-      eyebrow: 'Technisches Gateway',
-      title: 'Wählen Sie Ihren technischen Pfad',
+      button: 'Technische Überwachung anfragen',
+      eyebrow: 'Industrielles Gateway',
+      title: 'Wählen Sie die technische Division für Ihr Projekt',
       continue: 'Weiter',
       closeAria: 'Support-Gateway schließen',
       options: [
         {
-          title: 'QA/QC-, Inspektions- oder Inbetriebnahme-Support',
-          description: 'Einsatzbereite Spezialisten für Mechanical Completion, Qualitätssicherung und Inbetriebnahme vor Ort.',
+          title: 'Pipeline Quality',
+          description: 'Primäre QA/QC-, Inspektions- und Inbetriebnahme-Überwachung für Offshore-Wind, Pipelines, Raffinerien und Schwerindustrie.',
           url: 'https://pipelinequality.com'
         },
         {
-          title: 'Industrielle Software oder digitale technische Lösungen',
-          description: 'Digitale Workflows, Reporting-Tools, Dokumentationssysteme und industrielle Software-Enablement.',
+          title: 'BW Digit',
+          description: 'Unterstützende digitale Dokumentations-, Reporting- und Workflow-Systeme für industrielle Abläufe.',
           url: 'https://bwdigit.com'
         },
         {
-          title: 'Allgemeine Anfragen & Unternehmenspartnerschaften',
-          description: 'Kommerzielle Erstgespräche, strategische Lieferunterstützung und langfristige Partnerschaften.',
+          title: 'Unternehmensanfragen',
+          description: 'Direkte Projektgespräche, Partnerschaften und technische Scope-Reviews.',
           url: '#contact'
         }
       ]
     },
+    imageCarousel: {
+      eyebrow: 'Industrielles Portfolio',
+      title: 'Industrielle Lieferung im Fokus',
+      cta: 'Projekte ansehen'
+    },
+      imageCarousel: {
+        eyebrow: 'Industrielles Portfolio',
+        title: 'Industrielle Lieferung im Fokus',
+        cta: 'Projekte ansehen',
+        slides: [
+          {
+            title: 'Field Inspections & QA/QC',
+            description: 'On-site QA/QC inspections, technical surveys and inspection reports to ensure compliance and safety.',
+            cta: 'View Field Inspections'
+          },
+          {
+            title: 'Offshore Monopile Projects',
+            description: 'End-to-end monopile fabrication, load-out and offshore installation support for renewable energy projects.',
+            cta: 'View Offshore Projects'
+          },
+          {
+            title: 'Industrial Coordination & Reporting',
+            description: 'Digital coordination systems, QA/QC reporting, and management dashboards for industrial execution.',
+            cta: 'Explore Coordination'
+          },
+          {
+            title: 'Pipeline Inspection & QA/QC',
+            description: 'Inline inspection, coating verification and pressure testing management for pipeline integrity and compliance.',
+            cta: 'Inspect Pipelines'
+          },
+          {
+            title: 'Field Team Coordination',
+            description: 'On-site coordination and technical oversight that keeps projects on schedule and within specification.',
+            cta: 'View Field Coordination'
+          },
+          {
+            title: 'Data Center Infrastructure',
+            description: 'Deployment support for mission-critical infrastructure including power, cooling and structured cabling.',
+            cta: 'Explore Data Centers'
+          },
+          {
+            title: 'Quality Monitoring & Critical Facilities',
+            description: 'Precision monitoring, documentation control and operational oversight for mission-critical environments.',
+            cta: 'See Monitoring'
+          },
+          {
+            title: 'Project Management & Coordination',
+            description: 'End-to-end project delivery, scheduling and stakeholder coordination to reduce risk and ensure milestones.',
+            cta: 'View Project Management'
+          },
+          {
+            title: 'Industrial Operations',
+            description: 'Operations support, maintenance planning and continuous improvement programs for industrial sites.',
+            cta: 'Explore Operations'
+          },
+          {
+            title: 'Technical Deployment & Commissioning',
+            description: 'Deployment engineering, commissioning and technical mobilisation to bring systems online reliably.',
+            cta: 'See Deployment Support'
+          }
+        ]
+      },
+      imageCarousel: {
+        eyebrow: 'Industrielles Portfolio',
+        title: 'Industrielle Lieferung im Fokus',
+        cta: 'Projekte ansehen',
+        slides: [
+          {
+            title: 'Vor-Ort-Inspektionen & QA/QC',
+            description: 'QA/QC-Inspektionen vor Ort, technische Untersuchungen und Inspektionsberichte zur Sicherstellung von Compliance und Sicherheit.',
+            cta: 'Inspektionen ansehen'
+          },
+          {
+            title: 'Offshore-Monopile-Projekte',
+            description: 'Komplette Unterstützung bei Monopile-Fertigung, Verladung und Offshore-Installation für Erneuerbare-Energie-Projekte.',
+            cta: 'Offshore-Projekte'
+          },
+          {
+            title: 'Industrielle Koordination & Reporting',
+            description: 'Digitale Koordinationssysteme, QA/QC-Reporting und Management-Dashboards für industrielle Abläufe.',
+            cta: 'Koordination erkunden'
+          },
+          {
+            title: 'Pipeline-Inspektion & QA/QC',
+            description: 'Inline-Inspektion, Beschichtungsprüfung und Drucktest-Management zur Gewährleistung der Pipeline-Integrität.',
+            cta: 'Pipelines prüfen'
+          },
+          {
+            title: 'Feldteam-Koordination',
+            description: 'Vor-Ort-Koordination und technische Aufsicht, damit Projekte im Zeitplan und innerhalb der Spezifikation bleiben.',
+            cta: 'Koordination ansehen'
+          },
+          {
+            title: 'Data-Center-Infrastruktur',
+            description: 'Einsatzunterstützung für kritisch wichtige Infrastruktur, einschließlich Stromversorgung, Kühlung und strukturierte Verkabelung.',
+            cta: 'Data Centers'
+          },
+          {
+            title: 'Qualitätsüberwachung & Kritische Anlagen',
+            description: 'Präzise Überwachung, Dokumentationskontrolle und operative Aufsicht für mission-kritische Umgebungen.',
+            cta: 'Monitoring ansehen'
+          },
+          {
+            title: 'Projektmanagement & Koordination',
+            description: 'End-to-End-Projektabwicklung, Terminplanung und Stakeholder-Koordination zur Risikominimierung.',
+            cta: 'Projektmanagement'
+          },
+          {
+            title: 'Industrieller Betrieb',
+            description: 'Betriebsunterstützung, Instandhaltungsplanung und kontinuierliche Verbesserungsprogramme für Industrieanlagen.',
+            cta: 'Betrieb erkunden'
+          },
+          {
+            title: 'Technische Bereitstellung & Inbetriebnahme',
+            description: 'Einsatztechnik, Inbetriebnahme und technische Mobilisierung, um Systeme zuverlässig in Betrieb zu nehmen.',
+            cta: 'Bereitstellung ansehen'
+          }
+        ]
+      },
     about: {
       headline: 'Aus der Praxis gebaut. Durch Erfahrung angetrieben.',
       content: [
@@ -333,15 +453,15 @@ export const translations = {
         'Führen Sie Ihr Freelance-Geschäft über ein verlässliches internationales Engineering-Netzwerk mit starkem Praxisbezug. Wir verbinden unabhängige QA/QC-Inspektoren, Ingenieure, Inbetriebnahme-Spezialisten, Koordinatoren und HSE-Fachkräfte mit Industrie- und Energieprojekten weltweit — mit transparenter Zusammenarbeit, fairen Vertragsstrukturen und konformer B2B-Abwicklung.'
     },
     closing: {
-      headline: 'Bereit, Ihr Projekt zu verstärken?',
+      headline: 'Benötigen Sie technische Überwachung für ein kritisches Projekt?',
       description:
-        'Ob QA/QC-Spezialisten, Inspektionssupport, Inbetriebnahme-Profis, Field Engineers oder vollständige technische Projektverstärkung — Backpack Wander GmbH verbindet Sie mit erfahrenen Experten für komplexe internationale Projekte.',
-      joinNetwork: 'Dem Netzwerk beitreten'
+        'Ob Offshore-Wind-Inspektionssupport, Pipeline-Qualitätssicherung, industrielle Dokumentation oder ingenieurtechnische Vor-Ort-Überwachung — Backpack Wander GmbH unterstützt komplexe industrielle Projekte mit einer disziplinierten Unternehmensstruktur.',
+      joinNetwork: 'Team kontaktieren'
     },
     footer: {
       brandDescription:
-        'Premium QA/QC-Engineering, Feldeinsatz und technische Deployment-Services für Industrie-, Energie- und Infrastrukturprojekte weltweit.',
-      divisions: 'Unsere technischen Geschäftsbereiche',
+        'Industrielle technische Überwachung, QA/QC, Offshore-Wind-Support, technische Dokumentation und Projektkoordination für internationale Industrieprojekte.',
+      divisions: 'Unternehmensbereiche',
       company: 'Unternehmen',
       contactLegal: 'Kontakt & Rechtliches',
       email: 'E-Mail',
@@ -358,8 +478,8 @@ export const translations = {
       rights: '© 2026 Backpack Wander GmbH. Alle Rechte vorbehalten.'
     },
     contactPage: {
-      title: 'Kontakt aufnehmen',
-      subtitle: 'Haben Sie eine Frage oder ein Projekt? Teilen Sie uns mit, wie wir unterstützen können.'
+      title: 'Technischer Kontakt',
+      subtitle: 'Besprechen Sie QA/QC, Offshore-Wind-Support, Dokumentation oder technische Überwachung mit unserem Team.'
     },
     contactForm: {
       name: 'Name',
@@ -374,6 +494,37 @@ export const translations = {
       send: 'Anfrage senden',
       success: 'Ihre Anfrage wurde erfolgreich übermittelt.',
       error: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.'
+    },
+    industriesShowcase: {
+      eyebrow: 'Industrielle Sektoren',
+      title: 'Wo Pipeline Quality liefert',
+      subtitle: 'Von Offshore-Wind-Fertigung bis zu Raffinerien und kritischer Infrastruktur unterstützen wir industrielle Projekte, bei denen Präzision, Dokumentation und Kontrolle zählen.',
+      industries: [
+        {
+          title: 'Offshore-Wind & Renewables',
+          description: 'Monopiles, Offshore-Strukturen, Subsea-Anlagen und Fertigungsüberwachung'
+        },
+        {
+          title: 'Pipelines & Raffinerien',
+          description: 'Schweißüberwachung, Beschichtungsinspektion und Integritätsdokumentation'
+        },
+        {
+          title: 'Schwerindustrie',
+          description: 'Fertigungshallen, Strukturprüfungen, Hebevorgänge und Maßkontrolle'
+        },
+        {
+          title: 'Kritische Anlagen',
+          description: 'Technische Überwachung für mission-kritische Umgebungen und Lieferkontrolle'
+        },
+        {
+          title: 'Technische Feldoverwachung',
+          description: 'QA/QC-Koordination, Inspektionsberichte und Site-Disziplin'
+        },
+        {
+          title: 'Industrielle Dokumentation',
+          description: 'Reporting-Workflows, technische Unterlagen und Handover-Dokumentation'
+        }
+      ]
     }
   }
 } as const;
