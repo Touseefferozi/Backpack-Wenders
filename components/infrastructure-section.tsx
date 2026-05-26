@@ -7,10 +7,10 @@ export function InfrastructureSection() {
   const { content } = useLanguage();
 
   return (
-    <section id="industries" className="relative border-b border-white/10 py-20 sm:py-28 lg:py-32">
+    <section id="industries" className="relative border-b border-white/10 py-16 sm:py-20 lg:py-24">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(74,222,128,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.08),transparent_32%)]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end lg:gap-10">
           <Reveal>
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">
@@ -54,7 +54,7 @@ export function InfrastructureSection() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid gap-8 md:gap-10 lg:grid-cols-2">
+        <div className="mt-10 grid gap-6 md:gap-8 lg:grid-cols-2">
           {content.infrastructure.categories.map((category, index) => (
             <Reveal key={category.title}>
               <article className="group relative flex h-full flex-col justify-center overflow-hidden rounded-[28px] border border-white/10 bg-white/[0.03] p-8 transition duration-300 hover:-translate-y-1 hover:border-accent/30 hover:bg-white/[0.06]">

@@ -135,7 +135,7 @@ export function ImageCarousel() {
   const cta = slideContent?.cta ?? currentImage.cta;
 
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32">
+    <section className="relative overflow-hidden py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(215,164,74,0.20),transparent_42%),linear-gradient(180deg,#08110c_0%,#050805_100%)]" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

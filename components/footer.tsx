@@ -3,9 +3,11 @@
 import { Linkedin } from 'lucide-react';
 import { footerInfo, technicalDivisions } from '@/lib/site';
 import { useLanguage } from '@/components/language-provider';
+import { getLocalizedPath } from '@/lib/routing';
 
 export function Footer() {
   const { content, language } = useLanguage();
+  const homeHref = getLocalizedPath(language, '/');
 
   const divisionDescriptions =
     language === 'de'
@@ -59,22 +61,22 @@ export function Footer() {
             <h4 className="font-semibold text-offwhite">{content.footer.company}</h4>
             <ul className="mt-4 space-y-3">
               <li>
-                <a href="#about" className="text-sm text-slate-400 transition hover:text-accent">
+                <a href={`${homeHref}#about`} className="text-sm text-slate-400 transition hover:text-accent">
                   {content.footer.links.about}
                 </a>
               </li>
               <li>
-                <a href="#industries" className="text-sm text-slate-400 transition hover:text-accent">
+                <a href={`${homeHref}#industries`} className="text-sm text-slate-400 transition hover:text-accent">
                   {content.footer.links.industries}
                 </a>
               </li>
               <li>
-                <a href="#disciplines" className="text-sm text-slate-400 transition hover:text-accent">
+                <a href={`${homeHref}#disciplines`} className="text-sm text-slate-400 transition hover:text-accent">
                   {content.footer.links.expertise}
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-sm text-slate-400 transition hover:text-accent">
+                <a href={`${homeHref}#contact`} className="text-sm text-slate-400 transition hover:text-accent">
                   {content.footer.links.contact}
                 </a>
               </li>

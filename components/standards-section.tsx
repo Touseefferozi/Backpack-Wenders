@@ -7,7 +7,7 @@ export function StandardsSection() {
   const { content } = useLanguage();
 
   return (
-    <section id="standards" className="border-b border-white/10 py-20 sm:py-28 lg:py-32">
+    <section id="standards" className="border-b border-white/10 py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <h2 className="font-display text-4xl font-semibold text-white sm:text-5xl">
@@ -15,7 +15,7 @@ export function StandardsSection() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-12 lg:grid-cols-2">
+        <div className="mt-8 grid gap-8 lg:grid-cols-2">
           {/* Standards */}
           <Reveal>
             <div>

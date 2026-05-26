@@ -1,27 +1,8 @@
-import type { Metadata } from 'next';
-import { Navbar } from '@/components/navbar';
-import { ScrollProgress } from '@/components/scroll-progress';
-import { AboutUsSection } from '@/components/about-us-section';
-import { Footer } from '@/components/footer';
-import { buildPageMetadata } from '@/lib/seo';
+import { redirect } from 'next/navigation';
+import { getLocalizedPath } from '@/lib/routing';
+import { getRequestLocale } from '@/lib/routing-server';
 
-export async function generateMetadata(): Promise<Metadata> {
-  return buildPageMetadata(
-    'About | Backpack Wander GmbH',
-    'Industrial engineering oversight, QA/QC discipline, and technical project support built on field experience.',
-    '/about'
-  );
-}
-
-export default function AboutPage() {
-  return (
-    <>
-      <ScrollProgress />
-      <Navbar />
-      <main>
-        <AboutUsSection />
-      </main>
-      <Footer />
-    </>
-  );
+export default async function AboutPage() {
+  const locale = await getRequestLocale();
+  redirect(getLocalizedPath(locale, '/about'));
 }

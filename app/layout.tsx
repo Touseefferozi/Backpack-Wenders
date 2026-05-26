@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
-import { LanguageProvider } from '@/components/language-provider';
 import { siteConfig } from '@/lib/site';
+import { getLocaleFromHost, isLocale } from '@/lib/routing';
+import { headers } from 'next/headers';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
@@ -17,15 +18,15 @@ export const metadata: Metadata = {
     'Backpack Wander GmbH provides industrial engineering support, QA/QC oversight, offshore wind expertise, documentation control, and technical coordination for global projects.',
   alternates: {
     languages: {
-      en: siteConfig.domains.en,
-      de: siteConfig.domains.de
+      en: `${siteConfig.domains.en}/en`,
+      de: `${siteConfig.domains.de}/de`
     }
   },
   openGraph: {
     title: 'Backpack Wander GmbH',
     description:
       'Industrial engineering oversight, QA/QC, offshore wind support, and technical documentation for international projects.',
-    url: siteConfig.domains.en,
+    url: `${siteConfig.domains.en}/en`,
     siteName: 'Backpack Wander GmbH',
     type: 'website'
   },
@@ -37,11 +38,16 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const requestHeaders = await headers();
+  const headerLocale = requestHeaders.get('x-locale');
+  const hostLocale = getLocaleFromHost(requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host') ?? '');
+  const locale = isLocale(headerLocale) ? headerLocale : hostLocale;
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${manrope.variable} bg-background font-sans text-offwhite antialiased`}>
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );

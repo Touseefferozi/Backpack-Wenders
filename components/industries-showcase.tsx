@@ -58,11 +58,11 @@ export function IndustriesShowcase() {
   };
 
   return (
-    <section className="border-b border-white/10 py-20 sm:py-28 lg:py-32">
+    <section className="border-b border-white/10 py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <Reveal>
-          <div className="mb-16 text-left">
+          <div className="mb-10 text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">
               {header.eyebrow}
             </p>
@@ -76,7 +76,7 @@ export function IndustriesShowcase() {
         </Reveal>
 
         {/* Image Grid */}
-        <div className="grid gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {industries.map((industry: IndustryCard) => (
             <Reveal key={industry.title}>
               <div className="group relative h-72 overflow-hidden rounded-[24px] border border-white/10 shadow-industrial transition duration-300 hover:border-accent/25">

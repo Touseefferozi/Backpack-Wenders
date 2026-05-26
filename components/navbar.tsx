@@ -2,10 +2,13 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { technicalDivisions } from '@/lib/site';
 import { useLanguage } from '@/components/language-provider';
+import { getLocalizedPath } from '@/lib/routing';
+import { siteConfig } from '@/lib/site';
 
 function LanguageFlag({ code }: { code: 'en' | 'de' }) {
     if (code === 'de') {
@@ -36,10 +39,14 @@ export function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
   const ecosystemDropdownRef = useRef<HTMLDivElement | null>(null);
   const languageDropdownRef = useRef<HTMLDivElement | null>(null);
   const { content, language, options, setLanguage } = useLanguage();
   const selectedLanguage = options.find((option) => option.code === language) ?? options[0];
+
+  const localizedPath = (path: string) => getLocalizedPath(language, path);
+  const currentPath = pathname || '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,13 +77,22 @@ export function Navbar() {
   const handleLanguageSelect = (code: 'en' | 'de') => {
     setLanguage(code);
     setLanguageOpen(false);
+
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const pathWithoutLocale = currentPath.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
+    const targetPath = pathWithoutLocale === '/' ? `/${code}` : `/${code}${pathWithoutLocale}`;
+    const targetUrl = new URL(targetPath, siteConfig.domains[code]);
+    window.location.href = targetUrl.toString();
   };
 
   const navigation = [
-    { label: content.nav.about, href: '/about' },
-    { label: content.nav.industries, href: '/industries' },
-    { label: content.nav.deployment, href: '/deployment-model' },
-    { label: content.nav.contact, href: '/contact' }
+    { label: content.nav.about, href: localizedPath('/about') },
+    { label: content.nav.industries, href: localizedPath('/industries') },
+    { label: content.nav.deployment, href: localizedPath('/deployment-model') },
+    { label: content.nav.contact, href: localizedPath('/contact') }
   ];
 
   const divisionDescriptions =

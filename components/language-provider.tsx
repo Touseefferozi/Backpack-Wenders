@@ -47,18 +47,6 @@ export function LanguageProvider({ children, initialLanguage = 'en' }: { childre
       return;
     }
 
-    const storedLanguage = window.localStorage.getItem('preferred-language') as LanguageCode | null;
-    const hostnameLanguage = window.location.hostname.endsWith('.de') ? 'de' : 'en';
-    const selected = storedLanguage === 'de' || storedLanguage === 'en' ? storedLanguage : hostnameLanguage;
-    setLanguageState(selected);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    window.localStorage.setItem('preferred-language', language);
     const option = languageOptions.find((item) => item.code === language);
     document.documentElement.lang = option?.htmlLang ?? 'en';
   }, [language]);

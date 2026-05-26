@@ -7,10 +7,10 @@ export function DisciplinesSection() {
   const { content } = useLanguage();
 
   return (
-    <section id="disciplines" className="relative border-b border-white/10 py-20 sm:py-28 lg:py-32">
+    <section id="disciplines" className="relative border-b border-white/10 py-12 sm:py-16 lg:py-20">
       <div className="absolute inset-0 -z-10 bg-[#050707]" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+        <div className="mt-4 grid gap-4 lg:grid-cols-3">
           <Reveal>
             <div className="lg:col-span-1">
                 <p className="text-sm font-semibold uppercase tracking-widest text-red-400">

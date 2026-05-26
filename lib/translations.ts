@@ -170,6 +170,22 @@ export const translations = {
     contactPage: {
       title: 'Technical Contact',
       subtitle: 'Discuss industrial QA/QC, offshore wind support, documentation, or engineering oversight with our team.'
+      ,
+      card: {
+        projectCoordinationTitle: 'Project Coordination',
+        officeLabel: 'Office',
+        officeLines: ['Backpack Wander GmbH', 'Registered in Germany'],
+        responseWindowLabel: 'Response Window',
+        responseWindowText: 'Within 24 business hours',
+        emailLabel: 'Email',
+        focusLabel: 'Focus',
+        focusText: 'QA/QC, offshore wind, pipeline quality, documentation, and engineering oversight.',
+        primaryDivisionTitle: 'Primary Division',
+        primaryDivisionText:
+          'Pipeline Quality is the core industrial quality and oversight division, focused on execution control, reporting discipline, and site verification.',
+        sendEnquiryTitle: 'Send a Technical Enquiry',
+        sendEnquirySubtitle: 'Share the project scope, location, and timeline. We will respond with a suitable technical path.'
+      }
     },
     contactForm: {
       name: 'Name',
@@ -476,6 +492,22 @@ export const translations = {
     contactPage: {
       title: 'Technischer Kontakt',
       subtitle: 'Besprechen Sie QA/QC, Offshore-Wind-Support, Dokumentation oder technische Überwachung mit unserem Team.'
+      ,
+      card: {
+        projectCoordinationTitle: 'Projektkoordination',
+        officeLabel: 'Büro',
+        officeLines: ['Backpack Wander GmbH', 'Eingetragen in Deutschland'],
+        responseWindowLabel: 'Antwortzeitraum',
+        responseWindowText: 'Innerhalb von 24 Geschäftsstunden',
+        emailLabel: 'E-Mail',
+        focusLabel: 'Fokus',
+        focusText: 'QA/QC, Offshore-Wind, Pipeline-Qualität, Dokumentation und technische Überwachung.',
+        primaryDivisionTitle: 'Primäre Division',
+        primaryDivisionText:
+          'Pipeline Quality ist die primäre industrielle Qualitäts- und Überwachungsdivision, fokussiert auf Ausführungssteuerung, Reporting-Disziplin und Site-Verification.',
+        sendEnquiryTitle: 'Senden Sie eine technische Anfrage',
+        sendEnquirySubtitle: 'Teilen Sie Projektumfang, Standort und Zeitplan. Wir antworten mit einem passenden technischen Weg.'
+      }
     },
     contactForm: {
       name: 'Name',
