@@ -35,14 +35,14 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
       </button>
 
       {open ? (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center px-4 py-8">
+        <div className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto px-4 py-4 sm:items-center sm:py-8">
           <button
             type="button"
             aria-label={content.supportGateway.closeAria}
             onClick={() => setOpen(false)}
             className="absolute inset-0 bg-[#02040a]/80 backdrop-blur-sm"
           />
-          <div className="relative z-10 w-full max-w-4xl overflow-hidden rounded-[28px] border border-white/10 bg-surface shadow-industrial">
+          <div className="relative z-10 flex w-full max-w-4xl max-h-[calc(100dvh-2rem)] flex-col overflow-hidden rounded-[28px] border border-white/10 bg-surface shadow-industrial sm:max-h-[calc(100dvh-4rem)]">
             <div className="flex items-center justify-between border-b border-white/10 px-6 py-4 sm:px-8">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-accent/80">{content.supportGateway.eyebrow}</p>
@@ -58,7 +58,7 @@ export function SupportGateway({ tone = 'accent' }: SupportGatewayProps) {
               </button>
             </div>
 
-            <div className="grid gap-4 p-6 sm:p-8 lg:grid-cols-3">
+            <div className="grid flex-1 gap-4 overflow-y-auto p-6 sm:p-8 lg:grid-cols-3">
               {content.supportGateway.options.map((option, index) => (
                 <a
                   key={option.title}

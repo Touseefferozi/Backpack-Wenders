@@ -29,13 +29,13 @@ export function Hero() {
           priority
           quality={90}
         />
-        <div className="absolute inset-0 bg-[#020304]/52 sm:bg-[#020304]/40" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,4,0.18)_0%,rgba(2,3,4,0.42)_55%,rgba(2,3,4,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(2,3,4,0.02)_0%,rgba(2,3,4,0.12)_42%,rgba(2,3,4,0.4)_68%,rgba(2,3,4,0.6)_100%)]" />
+        <div className="absolute inset-0 bg-[#020304]/62 sm:bg-[#020304]/48" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,4,0.28)_0%,rgba(2,3,4,0.56)_55%,rgba(2,3,4,0.82)_100%)] sm:bg-[linear-gradient(90deg,rgba(2,3,4,0.1)_0%,rgba(2,3,4,0.2)_42%,rgba(2,3,4,0.5)_68%,rgba(2,3,4,0.72)_100%)]" />
       </div>
 
       <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] items-start px-4 pb-10 pt-6 sm:min-h-[78vh] sm:items-center sm:px-6 sm:pb-20 sm:pt-0 lg:px-8">
         <Reveal>
-          <div key={language} className="w-full max-w-[30rem] space-y-4 text-left sm:max-w-4xl sm:space-y-6 lg:max-w-4xl lg:space-y-8 prose-container">
+          <div key={language} className="w-full max-w-[32rem] space-y-4 text-left sm:max-w-4xl sm:space-y-6 lg:max-w-4xl lg:space-y-8 prose-container text-shadow-soft">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-accent sm:px-4 sm:py-2 sm:text-[0.72rem] sm:tracking-[0.35em]">
               Pipeline Quality | Primary Division
             </div>
@@ -76,7 +76,7 @@ export function Hero() {
               })()}
             </h1>
 
-            <p className="max-w-xl text-[0.96rem] leading-6 text-offwhite/84 sm:max-w-2xl sm:text-lg sm:leading-8">
+            <p className="max-w-[34ch] font-medium text-[0.98rem] leading-7 text-white/92 sm:max-w-2xl sm:text-lg sm:leading-8">
               {subheadline}
             </p>
 
