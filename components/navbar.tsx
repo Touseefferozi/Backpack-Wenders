@@ -84,8 +84,11 @@ export function Navbar() {
 
     const pathWithoutLocale = currentPath.replace(/^\/(en|de)(?=\/|$)/, '') || '/';
     const targetPath = pathWithoutLocale === '/' ? `/${code}` : `/${code}${pathWithoutLocale}`;
-    const targetUrl = new URL(targetPath, siteConfig.domains[code]);
-    window.location.href = targetUrl.toString();
+    // Preserve search and hash when navigating. Use a relative navigation to avoid
+    // opening a new tab or navigating to an unexpected host.
+    const search = window.location.search || '';
+    const hash = window.location.hash || '';
+    window.location.assign(`${targetPath}${search}${hash}`);
   };
 
   const navigation = [

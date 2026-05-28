@@ -23,9 +23,11 @@ export function Hero() {
           src="/Images/banner-6.png"
           alt="Industrial field operations with technical planning and digital dashboards"
           fill
-          className="object-cover object-[50%_20%] brightness-95 sm:object-center sm:brightness-105"
+          sizes="100vw"
+          placeholder="empty"
+          className="object-cover object-center brightness-95 sm:object-center sm:brightness-105"
           priority
-          quality={85}
+          quality={90}
         />
         <div className="absolute inset-0 bg-[#020304]/52 sm:bg-[#020304]/40" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,4,0.18)_0%,rgba(2,3,4,0.42)_55%,rgba(2,3,4,0.72)_100%)] sm:bg-[linear-gradient(90deg,rgba(2,3,4,0.02)_0%,rgba(2,3,4,0.12)_42%,rgba(2,3,4,0.4)_68%,rgba(2,3,4,0.6)_100%)]" />
@@ -33,7 +35,7 @@ export function Hero() {
 
       <div className="relative mx-auto flex min-h-[calc(100svh-4rem)] items-start px-4 pb-10 pt-6 sm:min-h-[78vh] sm:items-center sm:px-6 sm:pb-20 sm:pt-0 lg:px-8">
         <Reveal>
-          <div key={language} className="max-w-[20rem] space-y-4 text-left sm:max-w-4xl sm:space-y-6 lg:space-y-8">
+          <div key={language} className="w-full max-w-[30rem] space-y-4 text-left sm:max-w-4xl sm:space-y-6 lg:max-w-4xl lg:space-y-8 prose-container">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-accent sm:px-4 sm:py-2 sm:text-[0.72rem] sm:tracking-[0.35em]">
               Pipeline Quality | Primary Division
             </div>
