@@ -11,8 +11,6 @@ import { WhyWorkWithUs } from '@/components/why-work-with-us';
 // InfrastructureSection temporarily removed per request
 // IndustriesShowcase temporarily removed per request
 import { DisciplinesSection } from '@/components/disciplines-section';
-import { StandardsSection } from '@/components/standards-section';
-import { ImageCarousel } from '@/components/image-carousel';
 // DeploymentModelSection temporarily removed per request
 import { ClosingCTASection } from '@/components/closing-cta-section';
 import { ContactSection } from '@/components/contact-section';
@@ -71,9 +69,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <WhyWorkWithUs />
         {/* InfrastructureSection removed temporarily */}
         {/* IndustriesShowcase removed temporarily */}
-        <ImageCarousel />
         <DisciplinesSection />
-        <StandardsSection />
         {/* DeploymentModelSection removed temporarily */}
         <ClosingCTASection />
         <ContactSection />

@@ -3,7 +3,6 @@ import { Navbar } from '@/components/navbar';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { InfrastructureSection } from '@/components/infrastructure-section';
 import { DisciplinesSection } from '@/components/disciplines-section';
-import { StandardsSection } from '@/components/standards-section';
 import { Footer } from '@/components/footer';
 import { buildLocalizedPageMetadata } from '@/lib/seo';
 import { isLocale, type Locale, locales } from '@/lib/routing';
@@ -37,7 +36,6 @@ export default function IndustriesPage() {
       <main>
         <InfrastructureSection />
         <DisciplinesSection />
-        <StandardsSection />
       </main>
       <Footer />
     </>
