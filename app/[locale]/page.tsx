@@ -3,13 +3,19 @@ import { Navbar } from '@/components/navbar';
 import { ScrollProgress } from '@/components/scroll-progress';
 import { Hero } from '@/components/hero';
 import { AboutUsSection } from '@/components/about-us-section';
-import { InfrastructureSection } from '@/components/infrastructure-section';
-import { IndustriesShowcase } from '@/components/industries-showcase';
+import { ServicesSection } from '@/components/services-section';
+import { ProjectSupportSection } from '@/components/project-support-section';
+import { EngineeringDigitalization } from '@/components/engineering-digitalization';
+import { PipelineQualitySection } from '@/components/pipeline-quality-section';
+import { WhyWorkWithUs } from '@/components/why-work-with-us';
+// InfrastructureSection temporarily removed per request
+// IndustriesShowcase temporarily removed per request
 import { DisciplinesSection } from '@/components/disciplines-section';
 import { StandardsSection } from '@/components/standards-section';
 import { ImageCarousel } from '@/components/image-carousel';
-import { DeploymentModelSection } from '@/components/deployment-model-section';
+// DeploymentModelSection temporarily removed per request
 import { ClosingCTASection } from '@/components/closing-cta-section';
+import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 import { siteConfig } from '@/lib/site';
 import { buildLocalizedPageMetadata } from '@/lib/seo';
@@ -58,13 +64,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <main>
         <Hero />
         <AboutUsSection />
-        <InfrastructureSection />
-        <IndustriesShowcase />
+        <ServicesSection />
+        <ProjectSupportSection />
+        <EngineeringDigitalization />
+        <PipelineQualitySection />
+        <WhyWorkWithUs />
+        {/* InfrastructureSection removed temporarily */}
+        {/* IndustriesShowcase removed temporarily */}
         <ImageCarousel />
         <DisciplinesSection />
         <StandardsSection />
-        <DeploymentModelSection />
+        {/* DeploymentModelSection removed temporarily */}
         <ClosingCTASection />
+        <ContactSection />
       </main>
       <Footer />
       <script

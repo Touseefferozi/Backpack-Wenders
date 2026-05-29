@@ -27,13 +27,10 @@ export function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <h3 className="text-lg font-semibold text-offwhite">{footerInfo.company}</h3>
-            <p className="mt-2 text-xs uppercase tracking-[0.2em] text-accent">
-              {footerInfo.tagline}
-            </p>
-            <p className="mt-6 text-sm leading-6 text-offwhite/70">
-              {content.footer.brandDescription}
-            </p>
+            <h3 className="text-lg font-semibold text-offwhite">Backpack Wander GmbH</h3>
+            <p className="mt-2 text-sm font-semibold text-offwhite">{content.footer.brandDescription}</p>
+            <p className="mt-2 text-sm text-offwhite/70">{content.footer.divisions}</p>
+            <p className="mt-6 text-sm leading-6 text-offwhite/70">Industrial Engineering • Quality Assurance • Project Support</p>
           </div>
 
           {/* Technical Divisions */}

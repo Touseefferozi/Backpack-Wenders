@@ -37,9 +37,10 @@ export const translations = {
       selectLanguage: 'Select language'
     },
     hero: {
-      headline: 'Heavy Industries Demand Precision.We Deploy Trusted Technical Experts Worldwide',
+      headline: 'Engineering Support for Industrial Projects',
       subheadline:
-        'Backpack Wander GmbH connects industrial companies with vetted QA/QC inspectors, field engineers, commissioning specialists, HSE professionals, and technical experts for high-stakes infrastructure projects worldwide. From offshore wind and pipelines to refineries, energy facilities, and mission-critical infrastructure, we deliver compliant, field-proven execution under a trusted German GmbH framework.',
+        'Backpack Wander GmbH provides quality assurance, quality control, inspection support and project coordination services across offshore, energy, manufacturing and industrial sectors.',
+      subheadline2: 'Built on practical field experience and committed to quality, compliance and reliable project delivery.',
       joinNetwork: 'Join the Network'
     },
     supportGateway: {
@@ -67,12 +68,12 @@ export const translations = {
       ]
     },
     about: {
-      headline: 'Built on the Field. Driven by Experience.',
+      headline: 'Built Through Real Industrial Experience',
       content: [
-        'Backpack Wander GmbH was built by professionals who understand the reality of industrial projects from the ground up.',
-        'Founded by field-experienced QA/QC engineers, we know the pressure behind large-scale infrastructure work: tight deadlines, documentation overload, communication gaps, inspections under demanding conditions, and the responsibility that comes with critical operations.',
-        'We are not a transactional staffing agency built around volume recruitment. We build reliable technical support networks around real project needs — connecting companies with experienced inspectors, engineers, commissioning specialists, and field professionals who understand execution, compliance, and site reality.',
-        'Our approach combines strong engineering discipline, practical field experience, and modern project coordination to help industrial operations move faster, safer, and more efficiently across global projects.'
+        'Backpack Wander GmbH was founded by engineering professionals with experience supporting quality-critical projects across offshore, energy, manufacturing and industrial environments.',
+        'Our background includes quality assurance, quality control, inspection activities, documentation management, auditing and project support within complex technical projects.',
+        'Today we continue supporting major industrial manufacturing activities while building a trusted network of engineering professionals capable of contributing to projects across Europe and beyond.',
+        'We believe successful projects depend on technical competence, accountability, clear communication and continuous improvement.'
       ]
     },
     infrastructure: {
@@ -305,6 +306,7 @@ export const translations = {
       headline: 'Industrielle technische Überwachung für komplexe Projekte weltweit.',
       subheadline:
         'Backpack Wander GmbH bietet QA/QC-Überwachung, Offshore-Wind-Expertise, technische Dokumentation, Inspektionssupport und ingenieurtechnische Koordination für Industrieprojekte mit hohen Anforderungen. Pipeline Quality ist die primäre Division; BW Digit unterstützt digitale Workflows und Dokumentationssysteme.',
+      subheadline2: 'Auf praktischer Felderfahrung aufgebaut und verpflichtet zu Qualität, Konformität und zuverlässiger Projektausführung.',
       joinNetwork: 'Technische Überwachung anfragen'
     },
     supportGateway: {

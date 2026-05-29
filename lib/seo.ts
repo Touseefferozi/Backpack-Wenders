@@ -41,10 +41,12 @@ export function buildLocalizedPageMetadata(locale: Locale, title: string, descri
   const baseUrl = locale === 'de' ? siteConfig.domains.de : siteConfig.domains.en;
   const localizedPath = getLocalizedPath(locale, path);
   const canonicalUrl = `${baseUrl}${localizedPath}`;
+  const keywords = [...(siteConfig as any).seoKeywords?.primary ?? [], ...(siteConfig as any).seoKeywords?.secondary ?? []];
 
   return {
     title,
     description,
+    keywords,
     alternates: {
       canonical: canonicalUrl,
       languages: {

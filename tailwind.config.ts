@@ -20,7 +20,7 @@ const config: Config = {
         industrial: '0 24px 80px rgba(0,0,0,0.45)'
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
         display: ['var(--font-manrope)', 'system-ui', 'sans-serif']
       }
     }

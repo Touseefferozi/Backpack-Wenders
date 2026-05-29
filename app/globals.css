@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background: linear-gradient(180deg, #020304 0%, #050707 100%);
+  background: #020304;
   color: #e6e8e6;
 }
 
@@ -56,6 +56,29 @@ p {
 /* Headings: keep tight but readable */
 h1, h2, h3 {
   line-height: 1.08;
+}
+
+/* Reduced motion preference: minimize animations and transitions */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Accessible focus outlines */
+:focus {
+  outline: 2px solid #f5f5f3;
+  outline-offset: 2px;
+}
+
+/* High contrast mode helpers */
+@media (forced-colors: active) {
+  :focus {
+    outline: 2px solid ButtonText;
+  }
 }
 
 /* Slightly stronger body weight for small devices to avoid thin compressed text */

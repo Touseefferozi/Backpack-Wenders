@@ -1,6 +1,4 @@
 'use client';
-
-import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
 import { useLanguage } from '@/components/language-provider';
 import { norm } from '@/lib/normalizeImage';
@@ -13,41 +11,50 @@ interface IndustryCard {
   alt: string;
 }
 
-interface IndustryText {
-  title: string;
-  description: string;
-}
+ 
 
 export function IndustriesShowcase() {
   const { content } = useLanguage();
 
-  // image and alt assets (kept local) — content titles/descriptions come from translations
-  const srcList = [
-    norm('/Images/offshore-wind-turbine-fixation.png'),
-    norm('/Images/Pipelines & Refineries.png'),
-    norm('/Images/Heavy Construction.png'),
-    norm('/Images/Data center critical.png'),
-    norm('/Images/Technical Field Operations.png'),
-    norm('/Images/Enterprise Project Management.png')
+  // Static industries array: first two cards follow exact client text; remaining use translations
+  const industries: IndustryCard[] = [
+    {
+      title: 'OFFSHORE ENERGY',
+      description: 'Offshore wind projects, foundations production, fabrication and construction support.',
+      image: norm('/Images/offshore-wind-turbine-fixation.png'),
+      alt: 'Offshore wind foundations and fabrication'
+    },
+    {
+      title: 'OIL & GAS',
+      description: 'Inspection, quality assurance and project support for upstream and downstream operations.',
+      image: norm('/Images/Pipelines & Refineries.png'),
+      alt: 'Pipeline and refinery inspection site'
+    },
+    {
+      title: 'REFINING & PETROCHEMICAL',
+      description: 'Quality management and technical project support within process industries.',
+      image: norm('/Images/Heavy Construction.png'),
+      alt: 'Refinery and petrochemical processing site'
+    },
+    {
+      title: 'MANUFACTURING',
+      description: 'Heavy fabrication, production quality control and industrial process support.',
+      image: norm('/Images/Technical Field Operations.png'),
+      alt: 'Manufacturing and fabrication operations'
+    },
+    {
+      title: 'ENERGY INFRASTRUCTURE',
+      description: 'Power generation, transmission and industrial energy projects.',
+      image: norm('/Images/Enterprise Project Management.png'),
+      alt: 'Energy infrastructure project dashboard'
+    },
+    {
+      title: 'DATA CENTERS',
+      description: 'Construction quality assurance, commissioning support and technical coordination',
+      image: norm('/Images/Data center critical.png'),
+      alt: 'Data center infrastructure and commissioning'
+    }
   ];
-
-  const altList = [
-    'Offshore monopile fabrication and installation',
-    'Pipeline construction and inspection site',
-    'Large-scale industrial construction, welding, and structural integrity',
-    'Data center critical infrastructure',
-    'Field inspection team conducting QA/QC',
-    'Project management and technical coordination meeting'
-  ];
-
-  const industriesSource = (content?.industriesShowcase?.industries ?? translations.en.industriesShowcase.industries) as readonly IndustryText[];
-
-  const industries = industriesSource.map((item: IndustryText, i: number) => ({
-    title: item.title,
-    description: item.description,
-    image: srcList[i] ?? '/Images/Enterprise Project Management.png',
-    alt: altList[i] ?? item.title
-  }));
 
   const headerSource = content?.industriesShowcase ?? translations.en.industriesShowcase;
 
@@ -63,13 +70,13 @@ export function IndustriesShowcase() {
         {/* Section Header */}
         <Reveal>
           <div className="mb-10 text-left">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-accent/90">
+            <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.38em] text-accent/90 sm:text-[0.78rem]">
               {header.eyebrow}
             </p>
-            <h2 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-4 font-display text-4xl font-semibold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {header.title}
             </h2>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-white/78 sm:text-lg">
+            <p className="mt-6 max-w-[58ch] text-base leading-7 text-white/80 sm:text-lg">
               {header.subtitle}
             </p>
           </div>
@@ -79,25 +86,19 @@ export function IndustriesShowcase() {
         <div className="grid gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {industries.map((industry: IndustryCard) => (
             <Reveal key={industry.title}>
-              <div className="group relative h-72 overflow-hidden rounded-[24px] border border-white/10 shadow-industrial transition duration-300 hover:border-accent/25">
+              <div className="group relative h-72 overflow-hidden rounded-[28px] border border-white/10 bg-surface shadow-industrial transition duration-300 hover:border-accent/25">
                 {/* Background Image */}
-                <Image
-                  src={industry.image}
-                  alt={industry.alt}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-110"
-                  quality={85}
-                />
+                  <div className="absolute inset-0 bg-[#071011]" />
 
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,3,4,0.1)_0%,rgba(2,3,4,0.82)_100%)]" />
+                {/* Overlay for contrast (no gradients) */}
+                <div className="absolute inset-0 bg-black/50" />
 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-6 sm:p-8">
-                  <h3 className="text-lg font-bold leading-tight text-white sm:text-xl">
+                  <h3 className="font-display text-lg font-semibold leading-tight text-white sm:text-xl">
                     {industry.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-white/82 line-clamp-2">
+                  <p className="mt-3 max-w-[34ch] text-sm leading-6 text-white/82 line-clamp-2">
                     {industry.description}
                   </p>
                 </div>

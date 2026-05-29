@@ -7,7 +7,35 @@ export const siteConfig = {
   },
   talentIntakeUrl: 'https://backpackwander.com/contact',
   description:
-    'Industrial engineering support, QA/QC oversight, offshore wind expertise, technical documentation, and engineering coordination for global projects.'
+    'Backpack Wander GmbH delivers quality assurance services, quality control services, QA QC engineering, inspection support and commissioning support across offshore wind, heavy fabrication and industrial construction projects worldwide.'
+};
+
+export const seoKeywords = {
+  primary: [
+    'quality assurance services',
+    'quality control services',
+    'QA QC engineering',
+    'inspection support',
+    'industrial quality management',
+    'offshore quality assurance',
+    'offshore quality control',
+    'manufacturing quality support',
+    'engineering project support',
+    'industrial inspection services',
+    'commissioning support'
+  ],
+  secondary: [
+    'offshore wind',
+    'offshore foundations',
+    'foundations manufacturing',
+    'heavy fabrication',
+    'industrial construction',
+    'oil and gas projects',
+    'refinery projects',
+    'petrochemical projects',
+    'engineering consultants',
+    'industrial compliance'
+  ]
 };
 
 export const navigation = [

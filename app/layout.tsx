@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import { Inter, Manrope } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import { siteConfig } from '@/lib/site';
 import { getLocaleFromHost, isLocale } from '@/lib/routing';
 import { headers } from 'next/headers';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
 
 export const metadata: Metadata = {
@@ -46,7 +45,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} ${manrope.variable} bg-background font-sans text-offwhite antialiased`}>
+      <body className={`${manrope.variable} bg-background font-sans text-offwhite antialiased`}>
         {children}
       </body>
     </html>
