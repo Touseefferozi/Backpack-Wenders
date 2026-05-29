@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { footerInfo } from '@/lib/site';
-import Image from 'next/image';
 import { useLanguage } from '@/components/language-provider';
 
 export function ContactSection() {
@@ -27,7 +26,7 @@ export function ContactSection() {
         return;
       }
       setStatus('error');
-    } catch (err) {
+    } catch {
       setStatus('error');
     }
   }

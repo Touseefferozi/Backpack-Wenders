@@ -1,6 +1,5 @@
 "use client";
 
-import Image from 'next/image';
 import { useLanguage } from '@/components/language-provider';
 
 export function PipelineQualitySection() {

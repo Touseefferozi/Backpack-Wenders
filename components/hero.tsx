@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
 import { useLanguage } from '@/components/language-provider';
 
@@ -12,10 +13,13 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[100svh] overflow-hidden border-b border-white/10 pt-16 sm:min-h-screen sm:pt-24 lg:pt-28">
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/Images/Pipelines%20%26%20Refineries.png"
           alt="Hero background"
-          className="absolute inset-0 w-full h-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
       </div>
 

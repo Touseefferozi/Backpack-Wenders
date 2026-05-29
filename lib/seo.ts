@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { siteConfig } from '@/lib/site';
+import { siteConfig, seoKeywords } from '@/lib/site';
 import { getLocalizedPath, type Locale } from '@/lib/routing';
 
 export function getRequestLanguage() {
@@ -41,7 +41,7 @@ export function buildLocalizedPageMetadata(locale: Locale, title: string, descri
   const baseUrl = locale === 'de' ? siteConfig.domains.de : siteConfig.domains.en;
   const localizedPath = getLocalizedPath(locale, path);
   const canonicalUrl = `${baseUrl}${localizedPath}`;
-  const keywords = [...(siteConfig as any).seoKeywords?.primary ?? [], ...(siteConfig as any).seoKeywords?.secondary ?? []];
+  const keywords: string[] = [...seoKeywords.primary, ...seoKeywords.secondary];
 
   return {
     title,

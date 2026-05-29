@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Reveal } from '@/components/reveal';
 import { Check } from 'lucide-react';
 

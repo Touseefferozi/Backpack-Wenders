@@ -8,7 +8,6 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import { technicalDivisions } from '@/lib/site';
 import { useLanguage } from '@/components/language-provider';
 import { getLocalizedPath } from '@/lib/routing';
-import { siteConfig } from '@/lib/site';
 
 function LanguageFlag({ code }: { code: 'en' | 'de' }) {
     if (code === 'de') {
