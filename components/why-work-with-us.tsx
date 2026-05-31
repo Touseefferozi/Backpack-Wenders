@@ -1,27 +1,40 @@
 "use client";
 
-import { useLanguage } from '@/components/language-provider';
+import { Reveal } from '@/components/reveal';
 
 export function WhyWorkWithUs() {
-  const { content } = useLanguage();
-
-  const items = content.disciplines.items.slice(0, 4);
-
   return (
-    <section id="why" className="py-16 sm:py-20 lg:py-24">
+    <section id="why-work" className="py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
-        <h2 className="font-display text-3xl font-semibold leading-[1.04] tracking-tight text-white sm:text-4xl lg:text-5xl">
-          {content.disciplines.title}
-        </h2>
+        <Reveal>
+          <div>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              Why Clients Choose Backpack Wander
+            </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item, idx) => (
-            <div key={idx} tabIndex={0} className="rounded-[12px] border border-white/6 bg-black/5 p-6 transition-colors duration-200 hover:border-[#6B2335] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6B2335]/30">
-              <h3 className="font-display text-lg font-semibold text-white">{item}</h3>
-              <p className="mt-3 text-[1rem] leading-7 text-white/82">{content.disciplines.subtitle}</p>
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="rounded-[12px] border border-white/6 bg-black/5 p-6">
+                <h3 className="font-display text-lg font-semibold text-white">Practical Experience</h3>
+                <p className="mt-3 text-[1rem] leading-7 text-white/82">Experience gained through direct participation in industrial projects and manufacturing environments.</p>
+              </div>
+
+              <div className="rounded-[12px] border border-white/6 bg-black/5 p-6">
+                <h3 className="font-display text-lg font-semibold text-white">Quality Focus</h3>
+                <p className="mt-3 text-[1rem] leading-7 text-white/82">Strong commitment to quality standards, compliance requirements and project documentation.</p>
+              </div>
+
+              <div className="rounded-[12px] border border-white/6 bg-black/5 p-6">
+                <h3 className="font-display text-lg font-semibold text-white">Flexible Support</h3>
+                <p className="mt-3 text-[1rem] leading-7 text-white/82">Support available both on-site and remotely depending on project requirements.</p>
+              </div>
+
+              <div className="rounded-[12px] border border-white/6 bg-black/5 p-6">
+                <h3 className="font-display text-lg font-semibold text-white">Professional Network</h3>
+                <p className="mt-3 text-[1rem] leading-7 text-white/82">Growing network of engineers, inspectors and technical specialists available for future project collaboration.</p>
+              </div>
             </div>
-          ))}
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

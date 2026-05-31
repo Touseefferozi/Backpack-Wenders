@@ -1,12 +1,41 @@
-import RevealClient from './reveal.client';
+"use client";
+
+import { useEffect, useRef } from 'react';
+import { useReducedMotion } from 'framer-motion';
 
 export function Reveal({ children }: { children: React.ReactNode }) {
-  // Render a server-friendly wrapper with the initial animation state inlined.
-  // A small client helper (reveal.client.tsx) will hydrate and animate this
-  // element to its final state to avoid hydration mismatches.
+  const ref = useRef<HTMLDivElement | null>(null);
+  const shouldReduce = useReducedMotion();
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    if (shouldReduce) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      return;
+    }
+
+    const onIntersect: IntersectionObserverCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          el.style.transition = 'opacity 0.45s cubic-bezier(0.16,1,0.3,1), transform 0.45s cubic-bezier(0.16,1,0.3,1)';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(onIntersect, { threshold: 0.22 });
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, [shouldReduce]);
+
   return (
-    <div style={{ opacity: 0, transform: 'translateY(16px)' }}>
-      <RevealClient />
+    <div ref={ref} style={{ opacity: 0, transform: 'translateY(16px)' }}>
       {children}
     </div>
   );

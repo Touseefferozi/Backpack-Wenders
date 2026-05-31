@@ -5,23 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#060808',
-        surface: '#0f1413',
-        surfaceAlt: '#0b1612',
-        offwhite: '#E6E8E6',
-        line: 'rgba(255,255,255,0.06)',
+        background: '#111111',
+        surface: '#1A1A1A',
+        surfaceAlt: '#111111',
+        offwhite: '#F5F5F3',
+        line: '#2A2A2A',
         accent: {
-          DEFAULT: '#21b56f',
-          dark: '#16804d',
-          soft: '#68d39a'
+          DEFAULT: '#6B2335',
+          dark: '#7E3043',
+          soft: '#244238'
         }
       },
       boxShadow: {
         industrial: '0 24px 80px rgba(0,0,0,0.45)'
       },
       fontFamily: {
-        sans: ['var(--font-manrope)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-manrope)', 'system-ui', 'sans-serif']
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-montserrat)', 'system-ui', 'sans-serif']
       }
     }
   },

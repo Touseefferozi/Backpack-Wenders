@@ -10,6 +10,20 @@ export function Hero() {
   const subheadline = content.hero.subheadline;
   const subheadline2 = content.hero?.subheadline2 ?? content.about?.content?.[0] ?? '';
 
+  function handleAnchorClick(e: React.MouseEvent, id: string) {
+    try {
+      e.preventDefault();
+      const el = document.getElementById(id);
+      if (!el) return;
+      const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset')) || 0;
+      const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      window.history.replaceState(null, '', `#${id}`);
+    } catch (err) {
+      // noop
+    }
+  }
+
   return (
     <section id="home" className="relative min-h-[100svh] overflow-hidden border-b border-white/10 pt-16 sm:min-h-screen sm:pt-24 lg:pt-28">
       <div className="absolute inset-0 z-0">
@@ -30,13 +44,13 @@ export function Hero() {
 
       <div className="relative z-20 mx-auto flex min-h-[calc(100svh-4rem)] items-start px-4 pb-10 pt-6 sm:min-h-[78vh] sm:items-center sm:px-6 sm:pb-20 sm:pt-0 lg:px-8">
         <Reveal>
-          <div className="w-full max-w-[34rem] space-y-4 text-left sm:max-w-4xl sm:space-y-6 lg:max-w-4xl lg:space-y-8 prose-container text-shadow-soft">
+          <div className="w-full max-w-full space-y-4 text-left sm:max-w-2xl md:sm:max-w-[48rem] lg:max-w-[70ch] sm:space-y-6 lg:space-y-8 prose-container text-shadow-soft overflow-visible">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-offwhite/70 sm:px-4 sm:py-2 sm:text-[0.72rem] sm:tracking-[0.35em]">
               Pipeline Quality | Primary Division
             </div>
 
-            <h1 className="font-display text-[2rem] font-semibold leading-[1.02] tracking-tight text-white sm:text-4xl lg:text-6xl">
-              <span className="block">{headline}</span>
+            <h1 className="font-display font-semibold text-white text-[42px] lg:text-[64px] leading-[1.12] lg:leading-[1.06] tracking-normal hyphens-none break-normal overflow-visible">
+              <span className="block max-w-full whitespace-normal">{headline}</span>
             </h1>
 
             <p className="max-w-[36ch] font-medium text-[0.98rem] leading-7 text-white/92 sm:max-w-2xl sm:text-lg sm:leading-8">
@@ -50,14 +64,16 @@ export function Hero() {
             <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:gap-4 sm:pt-4">
               <a
                 href="#contact"
-                className="inline-flex w-full items-center justify-center rounded-full border border-green-400 bg-green-400 px-6 py-3 text-sm font-semibold text-black transition hover:bg-green-500 hover:border-green-500 sm:w-auto"
+                onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, 'contact')}
+                className="inline-flex w-full items-center justify-center rounded-full border border-[#6B2335] bg-[#6B2335] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#7E3043] hover:border-[#7E3043] sm:w-auto"
               >
                 Discuss Your Project
               </a>
 
               <a
                 href="#services"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-black/0 px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-white/20"
+                onClick={(e) => handleAnchorClick(e as unknown as React.MouseEvent, 'services')}
+                className="inline-flex items-center justify-center rounded-full border border-line bg-transparent px-6 py-3 text-sm font-semibold text-offwhite transition hover:border-[#6B2335]"
               >
                 Explore Services
               </a>

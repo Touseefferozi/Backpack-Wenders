@@ -35,6 +35,7 @@ function LanguageFlag({ code }: { code: 'en' | 'de' }) {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -55,6 +56,20 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    if (!header) return;
+
+    const setOffset = () => {
+      const h = header.getBoundingClientRect().height;
+      document.documentElement.style.setProperty('--scroll-offset', `${h + 24}px`);
+    };
+
+    setOffset();
+    window.addEventListener('resize', setOffset);
+    return () => window.removeEventListener('resize', setOffset);
+  }, [headerRef]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -90,12 +105,58 @@ export function Navbar() {
     window.location.assign(`${targetPath}${search}${hash}`);
   };
 
+  const homeHref = localizedPath('/');
   const navigation = [
-    { label: content.nav.about, href: localizedPath('/about') },
-    { label: content.nav.industries, href: localizedPath('/industries') },
-    { label: content.nav.deployment, href: localizedPath('/deployment-model') },
-    { label: content.nav.contact, href: localizedPath('/contact') }
+    { label: content.nav.about, href: `${homeHref}#about` },
+    { label: content.nav.industries, href: `${homeHref}#industries` },
+    { label: 'Services', href: `${homeHref}#services` },
+    { label: 'Pipeline Quality', href: `${homeHref}#pipeline-quality` },
+    { label: content.nav.contact, href: `${homeHref}#contact` }
   ];
+
+  function normalizePath(p: string) {
+    return (p || '').replace(/\/$/, '');
+  }
+
+  function smoothScrollToHash(hash: string) {
+    const el = document.getElementById(hash);
+    if (!el) return;
+    const offset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--scroll-offset')) || 0;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  function handleNavClickEvent(e: React.MouseEvent, href: string) {
+    try {
+      if (typeof window === 'undefined') return;
+      const [pathPart, hash] = href.split('#');
+      if (!hash) return; // not an anchor
+
+      const current = normalizePath(window.location.pathname || '/');
+      const targetPath = normalizePath(pathPart || homeHref);
+
+      if (current === targetPath) {
+        e.preventDefault();
+        smoothScrollToHash(hash);
+        // update URL without causing navigation
+        window.history.replaceState(null, '', `${targetPath}#${hash}`);
+      }
+    } catch (err) {
+      // noop
+    }
+  }
+
+  // When navigating to a URL that contains a hash (e.g. /en#industries), ensure
+  // the page scrolls to the anchor when the Navbar mounts or when pathname changes.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash) return;
+    const id = hash.replace('#', '');
+    // small delay to allow page layout to stabilize
+    const t = setTimeout(() => smoothScrollToHash(id), 80);
+    return () => clearTimeout(t);
+  }, [pathname]);
 
   const divisionDescriptions =
     language === 'de'
@@ -109,13 +170,13 @@ export function Navbar() {
         };
 
   return (
-    <header className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
+    <header ref={headerRef} className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
       isScrolled
         ? 'border-line bg-background/60 backdrop-blur-md'
         : 'border-line bg-background/4 bg-clip-padding backdrop-blur-md'
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3" onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}>
           <Image
             src="/Images/logo.png"
             alt="Backpack Wander logo"
@@ -134,7 +195,9 @@ export function Navbar() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-sm text-offwhite/70 transition hover:text-accent"
+              onClick={(e) => handleNavClickEvent(e, item.href)}
+              onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+              className="text-sm text-offwhite/70 transition hover:text-accent focus:outline-none focus-visible:outline-none focus-visible:ring-0"
             >
               {item.label}
             </Link>
@@ -144,7 +207,8 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setDropdownOpen((value) => !value)}
-              className="inline-flex items-center gap-1 text-sm text-offwhite/70 transition hover:text-accent"
+              onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+              className="inline-flex items-center gap-1 text-sm text-offwhite/70 transition hover:text-accent focus:outline-none focus-visible:outline-none focus-visible:ring-0"
             >
               {content.nav.ecosystem} <ChevronDown className="h-4 w-4" />
             </button>
@@ -159,6 +223,7 @@ export function Navbar() {
                     rel="noopener noreferrer"
                     className="block border-b border-line px-4 py-4 text-sm transition last:border-b-0 hover:bg-surface/70"
                     onClick={() => setDropdownOpen(false)}
+                    onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
                   >
                     <div className="font-semibold text-offwhite">{division.label}</div>
                     <div className="mt-1 text-xs text-offwhite/70">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
@@ -172,7 +237,8 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setLanguageOpen((value) => !value)}
-              className="inline-flex min-w-[160px] items-center justify-between gap-3 rounded-lg border border-line bg-white/3 px-4 py-2 text-sm text-offwhite transition hover:border-accent/40"
+              onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+              className="inline-flex min-w-[160px] items-center justify-between gap-3 rounded-lg border border-line bg-white/3 px-4 py-2 text-sm text-offwhite transition hover:border-accent/40 focus:outline-none focus-visible:outline-none focus-visible:ring-0"
               aria-label={content.nav.selectLanguage}
             >
               <span className="inline-flex items-center gap-2 font-medium">
@@ -189,6 +255,7 @@ export function Navbar() {
                     key={option.code}
                     type="button"
                     onClick={() => handleLanguageSelect(option.code)}
+                    onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
                     className="flex w-full items-center gap-3 px-4 py-3 text-left text-sm text-offwhite transition hover:bg-surface/70"
                   >
                     <LanguageFlag code={option.code} />
@@ -202,8 +269,9 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg border border-line bg-white/3 p-2 text-offwhite lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg border border-line bg-white/3 p-2 text-offwhite focus:outline-none focus-visible:outline-none focus-visible:ring-0 lg:hidden"
           onClick={() => setOpen((value) => !value)}
+          onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
           aria-label="Toggle navigation"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -217,8 +285,12 @@ export function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                onClick={() => setOpen(false)}
-                className="text-base text-offwhite/70 transition hover:text-accent"
+                onClick={(e) => {
+                  handleNavClickEvent(e as unknown as React.MouseEvent, item.href);
+                  setOpen(false);
+                }}
+                onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+                className="text-base text-offwhite/70 transition hover:text-accent focus:outline-none focus-visible:outline-none focus-visible:ring-0"
               >
                 {item.label}
               </Link>
@@ -233,7 +305,8 @@ export function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="rounded-2xl border border-line bg-white/3 px-4 py-3 text-sm text-offwhite/70"
+                    onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+                    className="rounded-2xl border border-line bg-white/3 px-4 py-3 text-sm text-offwhite/70 focus:outline-none focus-visible:outline-none focus-visible:ring-0"
                   >
                     <div className="font-semibold">{division.label}</div>
                     <div className="text-xs text-offwhite/70">{divisionDescriptions[division.label as 'Pipeline Quality' | 'BW Digit']}</div>
@@ -253,7 +326,8 @@ export function Navbar() {
                       handleLanguageSelect(option.code);
                       setOpen(false);
                     }}
-                    className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200"
+                    onMouseDown={(e) => (e.currentTarget as HTMLElement).blur()}
+                    className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-200 focus:outline-none focus-visible:outline-none focus-visible:ring-0"
                   >
                     <LanguageFlag code={option.code} />
                     <span>{option.label}</span>

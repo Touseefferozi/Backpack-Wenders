@@ -106,26 +106,6 @@ export const translations = {
         }
       ]
     },
-    disciplines: {
-      title: 'Technical Disciplines & Expertise',
-      subtitle: 'A highly clean, structured industrial matrix of specialized competencies.',
-      items: [
-        'QA/QC Engineering',
-        'Welding Inspection',
-        'Coating Inspection',
-        'NDT Coordination',
-        'HSE Management',
-        'Mechanical Engineering',
-        'Mechanical Completion',
-        'Commissioning Support',
-        'FAT/SAT Coordination',
-        'Turnover & Handover Documentation',
-        'Document Control',
-        'Offshore Inspection Support',
-        'Industrial Reporting & QA/QC Tracking',
-        'Project Controls & Management'
-      ]
-    },
     standards: {
       title: 'Standards, Compliance & Global Deployment',
       workWith: 'Standards We Work With',
@@ -144,7 +124,7 @@ export const translations = {
         'Operate your freelance business through a trusted international engineering network built around real field experience. We connect independent QA/QC inspectors, engineers, commissioning specialists, coordinators, and HSE professionals with industrial and energy projects worldwide — while supporting transparent collaboration, fair contract structures, and compliant B2B engagement.'
     },
     closing: {
-      headline: 'Need Technical Oversight on a Critical Project?',
+      headline: "Let's Discuss Your Project",
       description:
         'Whether you need offshore wind inspection support, pipeline quality control, industrial documentation, or on-site engineering oversight, Backpack Wander GmbH supports complex industrial delivery with a disciplined corporate framework.',
       joinNetwork: 'Contact the Team'
@@ -160,7 +140,6 @@ export const translations = {
       links: {
         about: 'About Us',
         industries: 'Industries',
-        expertise: 'Expertise',
         contact: 'Contact',
         privacy: 'Privacy Policy',
         terms: 'Terms of Service',
@@ -169,8 +148,9 @@ export const translations = {
       rights: '© 2026 Backpack Wander GmbH. All rights reserved.'
     },
     contactPage: {
-      title: 'Technical Contact',
-      subtitle: 'Discuss industrial QA/QC, offshore wind support, documentation, or engineering oversight with our team.'
+      title: "Let's Discuss Your Project",
+      subtitle:
+        'Whether you need offshore wind inspection support, pipeline quality control, industrial documentation, or on-site engineering oversight, Backpack Wander GmbH supports complex industrial delivery with a disciplined corporate framework.'
       ,
       card: {
         projectCoordinationTitle: 'Project Coordination',
@@ -429,26 +409,6 @@ export const translations = {
         }
       ]
     },
-    disciplines: {
-      title: 'Technische Disziplinen & Expertise',
-      subtitle: 'Eine klar strukturierte industrielle Matrix spezialisierter Kompetenzen.',
-      items: [
-        'QA/QC Engineering',
-        'Schweißinspektion',
-        'Beschichtungsinspektion',
-        'NDT-Koordination',
-        'HSE-Management',
-        'Maschinenbau',
-        'Mechanical Completion',
-        'Inbetriebnahme-Support',
-        'FAT/SAT-Koordination',
-        'Turnover- & Handover-Dokumentation',
-        'Dokumentenmanagement',
-        'Offshore-Inspektionssupport',
-        'Industrielles Reporting & QA/QC-Tracking',
-        'Projektsteuerung & Management'
-      ]
-    },
     standards: {
       title: 'Standards, Compliance & globaler Einsatz',
       workWith: 'Standards, mit denen wir arbeiten',
@@ -483,7 +443,6 @@ export const translations = {
       links: {
         about: 'Über uns',
         industries: 'Branchen',
-        expertise: 'Expertise',
         contact: 'Kontakt',
         privacy: 'Datenschutz',
         terms: 'Nutzungsbedingungen',
@@ -492,8 +451,9 @@ export const translations = {
       rights: '© 2026 Backpack Wander GmbH. Alle Rechte vorbehalten.'
     },
     contactPage: {
-      title: 'Technischer Kontakt',
-      subtitle: 'Besprechen Sie QA/QC, Offshore-Wind-Support, Dokumentation oder technische Überwachung mit unserem Team.'
+      title: 'Lassen Sie uns über Ihr Projekt sprechen',
+      subtitle:
+        'Wenn Sie Unterstützung bei Offshore-Wind-Inspektionen, Pipeline-Qualitätskontrolle, industrieller Dokumentation oder technischer Überwachung vor Ort benötigen, unterstützt Backpack Wander GmbH komplexe industrielle Projekte mit einer disziplinierten Unternehmensstruktur.'
       ,
       card: {
         projectCoordinationTitle: 'Projektkoordination',

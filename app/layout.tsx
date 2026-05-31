@@ -1,11 +1,10 @@
 import type { Metadata } from 'next';
-import { Manrope } from 'next/font/google';
+import { Inter, Montserrat } from 'next/font/google';
 import { siteConfig } from '@/lib/site';
-import { getLocaleFromHost, isLocale } from '@/lib/routing';
-import { headers } from 'next/headers';
 import './globals.css';
 
-const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', weight: ['400'] });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', weight: ['600'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.domains.en),
@@ -37,15 +36,10 @@ export const metadata: Metadata = {
   }
 };
 
-export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const requestHeaders = await headers();
-  const headerLocale = requestHeaders.get('x-locale');
-  const hostLocale = getLocaleFromHost(requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host') ?? '');
-  const locale = isLocale(headerLocale) ? headerLocale : hostLocale;
-
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${manrope.variable} bg-background font-sans text-offwhite antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${montserrat.variable} bg-background font-sans text-offwhite antialiased`}>
         {children}
       </body>
     </html>

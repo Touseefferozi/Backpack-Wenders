@@ -4,20 +4,30 @@
 
 :root {
   color-scheme: dark;
+  --scroll-offset: 72px;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+/* Ensure anchor targets account for the fixed header height. Navbar sets --scroll-offset at runtime. */
+section[id] {
+  scroll-margin-top: calc(var(--scroll-offset) + 1.5rem);
 }
 
 body {
-  background: #020304;
-  color: #e6e8e6;
+  background: #111111;
+  color: #F5F5F3;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400;
+  line-height: 1.6 !important;
 }
 
 ::selection {
-  background: rgba(25, 216, 143, 0.18);
-  color: #021010;
+  background: #6B2335;
+  color: #FFFFFF;
 }
 
 @layer utilities {
@@ -43,7 +53,8 @@ body {
 p {
   max-width: 65ch;
   margin: 0 0 1rem;
-  line-height: 1.6;
+  line-height: 1.6 !important;
+  font-weight: 400 !important;
   font-variation-settings: normal;
   -webkit-hyphens: none;
   -ms-hyphens: none;
@@ -53,9 +64,26 @@ p {
   text-align: left;
 }
 
+li,
+label,
+input,
+textarea {
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+}
+
 /* Headings: keep tight but readable */
-h1, h2, h3 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.08;
+  font-family: var(--font-montserrat), sans-serif !important;
+  font-weight: 600 !important;
+}
+
+/* Utility for components using the font-display class */
+.font-display {
+  font-family: var(--font-montserrat) !important;
+  font-weight: 600 !important;
 }
 
 /* Reduced motion preference: minimize animations and transitions */
@@ -86,7 +114,8 @@ h1, h2, h3 {
   p {
     max-width: 100%;
     font-size: 0.98rem;
-    line-height: 1.62;
+    line-height: 1.6 !important;
+    font-weight: 400 !important;
     -webkit-hyphens: none;
     -ms-hyphens: none;
     hyphens: none;

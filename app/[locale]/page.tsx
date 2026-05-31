@@ -4,15 +4,13 @@ import { ScrollProgress } from '@/components/scroll-progress';
 import { Hero } from '@/components/hero';
 import { AboutUsSection } from '@/components/about-us-section';
 import { ServicesSection } from '@/components/services-section';
-import { ProjectSupportSection } from '@/components/project-support-section';
-import { EngineeringDigitalization } from '@/components/engineering-digitalization';
 import { PipelineQualitySection } from '@/components/pipeline-quality-section';
 import { WhyWorkWithUs } from '@/components/why-work-with-us';
+import { IndustriesShowcase } from '@/components/industries-showcase';
 // InfrastructureSection temporarily removed per request
 // IndustriesShowcase temporarily removed per request
-import { DisciplinesSection } from '@/components/disciplines-section';
 // DeploymentModelSection temporarily removed per request
-import { ClosingCTASection } from '@/components/closing-cta-section';
+// ClosingCTASection removed per request
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 import { siteConfig } from '@/lib/site';
@@ -63,15 +61,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <Hero />
         <AboutUsSection />
         <ServicesSection />
-        <ProjectSupportSection />
-        <EngineeringDigitalization />
         <PipelineQualitySection />
+        <IndustriesShowcase />
         <WhyWorkWithUs />
         {/* InfrastructureSection removed temporarily */}
         {/* IndustriesShowcase removed temporarily */}
-        <DisciplinesSection />
         {/* DeploymentModelSection removed temporarily */}
-        <ClosingCTASection />
+        {/* Closing CTA removed per request */}
         <ContactSection />
       </main>
       <Footer />

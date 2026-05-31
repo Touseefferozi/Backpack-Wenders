@@ -68,11 +68,6 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`${homeHref}#disciplines`} className="text-sm text-slate-400 transition hover:text-accent">
-                  {content.footer.links.expertise}
-                </a>
-              </li>
-              <li>
                 <a href={`${homeHref}#contact`} className="text-sm text-slate-400 transition hover:text-accent">
                   {content.footer.links.contact}
                 </a>

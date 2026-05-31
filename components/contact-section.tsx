@@ -32,7 +32,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="relative bg-[#0b0b0b] border-t border-white/6 py-20">
+    <section id="contact" className="relative bg-[#1A1A1A] border-t border-line py-20">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[#071011]" />
         <div className="absolute inset-0 bg-black/60" />
@@ -41,7 +41,7 @@ export function ContactSection() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <div>
-            <h2 className="text-3xl font-semibold tracking-tight text-white">{content.contactPage.title}</h2>
+            <h2 className="font-display text-3xl font-semibold tracking-tight text-white">{content.contactPage.title}</h2>
             <p className="mt-4 text-lg leading-7 text-slate-300">{content.contactPage.subtitle}</p>
 
             <div className="mt-8 space-y-4 text-sm text-slate-300">
@@ -67,7 +67,7 @@ export function ContactSection() {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="rounded-lg border border-white/6 bg-white/2 p-6">
+            <form onSubmit={handleSubmit} className="rounded-lg border border-line bg-black/10 p-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <label className="grid gap-2">
                   <span className="text-xs font-semibold uppercase tracking-widest text-slate-300">{content.contactForm.name}</span>
@@ -75,7 +75,7 @@ export function ContactSection() {
                     required
                     value={formState.name}
                     onChange={(e) => setFormState((s) => ({ ...s, name: (e.target as HTMLInputElement).value }))}
-                    className="w-full rounded-md border border-white/8 bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
+                    className="w-full rounded-md border border-line bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
                     placeholder={content.contactForm.namePlaceholder}
                   />
                 </label>
@@ -85,7 +85,7 @@ export function ContactSection() {
                   <input
                     value={formState.company}
                     onChange={(e) => setFormState((s) => ({ ...s, company: (e.target as HTMLInputElement).value }))}
-                    className="w-full rounded-md border border-white/8 bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
+                    className="w-full rounded-md border border-line bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
                     placeholder={content.contactForm.companyPlaceholder}
                   />
                 </label>
@@ -98,7 +98,7 @@ export function ContactSection() {
                   type="email"
                   value={formState.email}
                   onChange={(e) => setFormState((s) => ({ ...s, email: (e.target as HTMLInputElement).value }))}
-                  className="w-full rounded-md border border-white/8 bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
+                  className="w-full rounded-md border border-line bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400"
                   placeholder={content.contactForm.emailPlaceholder}
                 />
               </label>
@@ -110,7 +110,7 @@ export function ContactSection() {
                   rows={5}
                   value={formState.message}
                   onChange={(e) => setFormState((s) => ({ ...s, message: (e.target as HTMLTextAreaElement).value }))}
-                  className="w-full rounded-md border border-white/8 bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400 resize-none"
+                  className="w-full rounded-md border border-line bg-transparent px-3 py-2 text-white outline-none placeholder:text-slate-400 resize-none"
                   placeholder={content.contactForm.messagePlaceholder}
                 />
               </label>
@@ -118,7 +118,7 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-white text-black px-6 py-3 font-semibold"
+                className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#6B2335] px-6 py-3 font-semibold text-white transition hover:bg-[#7E3043]"
               >
                 {content.contactForm.send}
               </button>

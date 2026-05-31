@@ -7,11 +7,7 @@ export function PipelineQualitySection() {
   const option = content.supportGateway.options?.find((o) => o.title === 'Pipeline Quality') ?? content.supportGateway.options?.[0];
 
   return (
-    <section id="pipeline-quality" className="py-16 sm:py-20 lg:py-24 bg-surface">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[#071011] opacity-80" />
-        <div className="absolute inset-0 bg-black/50" />
-      </div>
+    <section id="pipeline-quality" className="py-16 sm:py-20 lg:py-24 bg-[#1A1A1A]">
 
       <div className="relative mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <p className="font-display text-[0.72rem] font-semibold uppercase tracking-[0.42em] text-offwhite/70">{option?.title}</p>
