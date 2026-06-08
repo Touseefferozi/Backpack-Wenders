@@ -6,7 +6,6 @@ import { useLanguage } from '@/components/language-provider';
 export function ContactSection() {
   const { content } = useLanguage();
   const section = content.homeContact;
-  const { contactNote } = content.footer;
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden bg-surface">
@@ -22,25 +21,25 @@ export function ContactSection() {
         <div className="contact-section-copy">
           <p className="contact-section-intro type-body text-offwhite">
             <span className="contact-section-intro-desktop">
-              {section.introLines.map((line) => (
-                <span key={line} className="contact-section-intro-line">
+              {section.introLines.map((line, idx) => (
+                <span
+                  key={line}
+                  className={`contact-section-intro-line${idx === section.introLines.length - 1 ? ' text-secondaryText' : ''}`}
+                >
                   {line}
                 </span>
               ))}
             </span>
             <span className="contact-section-intro-mobile">
-              {section.introLinesMobile.map((line) => (
-                <span key={line} className="contact-section-intro-line">
+              {section.introLinesMobile.map((line, idx) => (
+                <span
+                  key={line}
+                  className={`contact-section-intro-line${idx === section.introLinesMobile.length - 1 ? ' contact-section-note-line text-secondaryText' : ''}`}
+                >
                   {line}
                 </span>
               ))}
-              <span className="contact-section-intro-line contact-section-note-line text-secondaryText">
-                {contactNote}
-              </span>
             </span>
-          </p>
-          <p className="contact-section-response contact-section-response-desktop type-body text-secondaryText">
-            {contactNote}
           </p>
         </div>
       </div>

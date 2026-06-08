@@ -123,11 +123,15 @@ export const translations = {
       title: "Let's Discuss Your Project",
       introLines: [
         'Backpack Wander GmbH supports offshore and industrial projects',
-        'through Pipeline Quality, with modern digital services delivered by BW Digit.'
+        'through Pipeline Quality, with modern digital services delivered by',
+        'BW Digit. Response within 24 business hours'
       ],
       introLinesMobile: [
-        'Backpack Wander GmbH supports offshore and industrial projects',
-        'through Pipeline Quality, with modern digital services delivered by BW Digit.'
+        'Backpack Wander GmbH supports',
+        'offshore and industrial projects',
+        'through Pipeline Quality, with modern',
+        'digital services delivered by BW Digit.',
+        'Response within 24 business hours'
       ],
       discussProject: 'Discuss Your Project',
       joinNetwork: 'Join Our Network',
@@ -250,16 +254,22 @@ export const translations = {
       company: 'Company',
       contactLegal: 'Email',
       contactNote: 'Response within 24 business hours',
+      addressLabel: 'Address',
       address: 'Kolonnenstraße 8, 10827 Berlin, Germany',
       email: 'Email',
+      phone: 'Phone Number',
+      whatsapp: 'WhatsApp',
       legal: 'Legal',
       links: {
         about: 'About Us',
         industries: 'Industries',
         contact: 'Contact',
         privacy: 'Privacy Policy',
-        terms: 'Terms of Service',
-        impressum: 'Impressum'
+        terms: 'Terms & Conditions',
+        impressum: 'Impressum',
+        privacyShort: 'Privacy',
+        termsShort: 'Terms',
+        impressumShort: 'Impressum'
       },
       rights: '© 2026 Backpack Wander GmbH. All rights reserved.',
       divisionDescriptions: {
@@ -619,11 +629,15 @@ export const translations = {
       title: 'Lassen Sie uns über Ihr Projekt sprechen',
       introLines: [
         'Backpack Wander GmbH unterstützt Offshore- und Industrieprojekte',
-        'über Pipeline Quality, mit modernen digitalen Dienstleistungen von BW Digit.'
+        'über Pipeline Quality, mit modernen digitalen Dienstleistungen von',
+        'BW Digit. Antwort innerhalb von 24 Geschäftsstunden'
       ],
       introLinesMobile: [
-        'Backpack Wander GmbH unterstützt Offshore- und Industrieprojekte',
-        'über Pipeline Quality, mit modernen digitalen Dienstleistungen von BW Digit.'
+        'Backpack Wander GmbH unterstützt',
+        'Offshore- und Industrieprojekte',
+        'über Pipeline Quality, mit modernen',
+        'digitalen Dienstleistungen von BW Digit.',
+        'Antwort innerhalb von 24 Geschäftsstunden'
       ],
       discussProject: 'Projekt besprechen',
       joinNetwork: 'Unserem Netzwerk beitreten',
@@ -748,8 +762,11 @@ export const translations = {
       company: 'Unternehmen',
       contactLegal: 'E-Mail',
       contactNote: 'Antwort innerhalb von 24 Geschäftsstunden',
+      addressLabel: 'Adresse',
       address: 'Kolonnenstraße 8, 10827 Berlin, Deutschland',
       email: 'E-Mail',
+      phone: 'Telefonnummer',
+      whatsapp: 'WhatsApp',
       legal: 'Rechtliches',
       links: {
         about: 'Über uns',
@@ -757,7 +774,10 @@ export const translations = {
         contact: 'Kontakt',
         privacy: 'Datenschutz',
         terms: 'Nutzungsbedingungen',
-        impressum: 'Impressum'
+        impressum: 'Impressum',
+        privacyShort: 'Datenschutz',
+        termsShort: 'Bedingungen',
+        impressumShort: 'Impressum'
       },
       rights: '© 2026 Backpack Wander GmbH. Alle Rechte vorbehalten.',
       divisionDescriptions: {
