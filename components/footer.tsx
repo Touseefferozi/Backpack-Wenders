@@ -61,7 +61,10 @@ export function Footer() {
           </div>
 
           <div className="footer-col footer-col-contact">
-            <FooterHeading>{content.footer.companyName}</FooterHeading>
+            <FooterHeading>
+              {content.footer.companyName.replace(/\s*GmbH\s*$/, '')}{' '}
+              <span className="highlight-green">GmbH</span>
+            </FooterHeading>
             <div className="footer-contact">
               <div className="footer-contact-item">
                 <span className="footer-contact-icon-wrap" aria-hidden>

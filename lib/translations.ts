@@ -51,6 +51,7 @@ export const translations = {
     },
     servicesSection: {
       title: 'Quality, Inspection & Project Support',
+      titleLinesMobile: ['Quality, Inspection &', 'Project Support'],
       technicalOperations: 'Technical Operations',
       professionalResources: 'Professional Resources',
       technicalItems: [
@@ -558,6 +559,7 @@ export const translations = {
     },
     servicesSection: {
       title: 'Qualität, Inspektion & Projektsupport',
+      titleLinesMobile: ['Qualität, Inspektion &', 'Projektsupport'],
       technicalOperations: 'Technische Operationen',
       professionalResources: 'Professionelle Ressourcen',
       technicalItems: [

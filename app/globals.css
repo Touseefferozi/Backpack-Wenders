@@ -222,6 +222,33 @@ main {
   color: var(--text-main);
 }
 
+.services-section-title-desktop {
+  display: none;
+}
+
+.services-section-title-mobile {
+  display: block;
+}
+
+.services-section-title-line {
+  display: block;
+  text-wrap: pretty;
+}
+
+.services-section-title-line + .services-section-title-line {
+  margin-top: 0.125rem;
+}
+
+@media (min-width: 768px) {
+  .services-section-title-desktop {
+    display: block;
+  }
+
+  .services-section-title-mobile {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .section-title,
   .section-block-title,
@@ -1109,16 +1136,14 @@ main {
 
 .about-experience-text {
   margin: 0;
-  font-weight: 400;
-  line-height: 1.6;
-}
-
-.about-project-environment {
-  margin-top: 0.25rem;
 }
 
 .about-project-environment-title {
   color: var(--accent-mint);
+  white-space: nowrap;
+  text-wrap: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 @media (min-width: 768px) {
@@ -1158,7 +1183,6 @@ main {
   margin: 0;
   color: var(--text-main);
   white-space: nowrap;
-  line-height: 1.35;
 }
 
 .about-project-environment-list li::marker {
@@ -1492,7 +1516,8 @@ main {
 .hero-title .highlight-green,
 .section-block-title .highlight-green,
 .about-highlight-box .highlight-green,
-.bw-digit-panel-title .highlight-green {
+.bw-digit-panel-title .highlight-green,
+.footer-col-heading .highlight-green {
   color: var(--accent-mint);
   font-size: inherit;
   font-weight: inherit;

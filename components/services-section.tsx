@@ -9,7 +9,16 @@ export function ServicesSection() {
   return (
     <section id="services" className="section-padding relative overflow-x-clip">
       <div className="section-shell">
-        <h2 className="section-title text-offwhite">{section.title}</h2>
+        <h2 className="section-title services-section-title text-offwhite">
+          <span className="services-section-title-desktop">{section.title}</span>
+          <span className="services-section-title-mobile">
+            {section.titleLinesMobile.map((line) => (
+              <span key={line} className="services-section-title-line">
+                {line}
+              </span>
+            ))}
+          </span>
+        </h2>
 
         <div className="section-content grid gap-6 lg:grid-cols-2 lg:gap-8">
           <div className="section-card min-w-0">

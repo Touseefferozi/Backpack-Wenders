@@ -28,7 +28,7 @@ export function AboutUsSection({ headingLevel = 'h2' }: AboutUsSectionProps) {
               {content.about.content.map((paragraph, index) => (
                 <div key={index} className="about-highlight-box">
                   <p
-                    className={`max-w-none${
+                    className={`type-body max-w-none${
                       index === 1
                         ? ' about-experience-text whitespace-pre-line text-offwhite'
                         : ' text-secondaryText'
@@ -49,8 +49,9 @@ export function AboutUsSection({ headingLevel = 'h2' }: AboutUsSectionProps) {
                   </p>
                 </div>
               ))}
+            </div>
 
-              <div className="about-project-environment">
+            <div className="about-project-environment mt-10 md:mt-12 lg:mt-14">
                 <h3 className="section-card-title about-project-environment-title">
                   {content.about.recentProjectEnvironment.title}
                 </h3>
@@ -66,7 +67,6 @@ export function AboutUsSection({ headingLevel = 'h2' }: AboutUsSectionProps) {
                   ))}
                 </div>
               </div>
-            </div>
           </div>
 
           <div className="about-section-media relative mx-auto aspect-[16/10] w-full max-w-full overflow-hidden rounded-xl md:aspect-[4/3] md:max-h-[380px]">
