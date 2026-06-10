@@ -1652,6 +1652,7 @@ h6 {
   --footer-legal-size: 0.8125rem;
   --footer-line: 1.6;
   --footer-col-gap: 2rem;
+  --footer-side-width: min(100%, 26rem);
 
   padding-block: 2rem 1rem;
   font-family: var(--font-inter), sans-serif;
@@ -1667,13 +1668,21 @@ h6 {
 .footer-shell .footer-brand-copy,
 .footer-shell .footer-divisions .footer-link,
 .footer-shell .footer-contact-text,
-.footer-shell .footer-col-heading,
-.footer-shell .footer-legal-links .footer-link,
-.footer-shell .footer-legal-links .footer-legal-link {
+.footer-shell .footer-col-heading {
   font-family: var(--font-inter), sans-serif;
   font-size: var(--footer-body);
   font-weight: 400;
   line-height: 160%;
+  letter-spacing: normal;
+  color: var(--offwhite);
+}
+
+.footer-shell .footer-legal-links .footer-link,
+.footer-shell .footer-legal-links .footer-legal-link {
+  font-family: var(--font-inter), sans-serif;
+  font-size: var(--footer-legal-size);
+  font-weight: 400;
+  line-height: 1.5;
   letter-spacing: normal;
   color: var(--offwhite);
 }
@@ -1708,7 +1717,7 @@ h6 {
   .footer-shell {
     padding-block: 2.25rem 2rem;
     padding-bottom: max(2rem, calc(1.25rem + env(safe-area-inset-bottom, 0px)));
-    border-top: 1px solid rgba(var(--logo-silver-rgb), 0.1);
+    border-top: 1px solid var(--logo-accent-button);
   }
 
   .footer-shell .footer-legal-links .footer-link,
@@ -1729,8 +1738,9 @@ h6 {
   }
 
   .footer-col-contact {
-    width: 100%;
-    margin-inline-start: 0;
+    width: var(--footer-side-width);
+    max-width: 100%;
+    margin-inline-start: auto;
     align-items: flex-start;
     text-align: left;
   }
@@ -1872,18 +1882,27 @@ h6 {
 
   .footer-meta {
     width: 100%;
-    font-size: var(--footer-body);
-    line-height: var(--footer-line);
+    max-width: 100%;
+    min-width: 0;
+    font-size: 0.6875rem;
+    line-height: 1.45;
     font-weight: 400;
     text-align: center;
     color: rgba(var(--logo-silver-rgb), 0.65);
     padding-inline: 0.25rem;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .footer-legal {
-    flex-direction: column;
-    gap: 0.875rem;
+    flex-direction: row;
+    gap: 0.75rem;
     width: 100%;
+    max-width: 100%;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
   }
 
   .footer-legal-links {
@@ -1967,15 +1986,24 @@ h6 {
     align-items: start;
   }
 
+  .footer-col-contact {
+    justify-self: end;
+  }
 }
 
 .footer-col-contact {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  width: var(--footer-side-width);
+  max-width: 100%;
+  margin-inline-start: auto;
 }
 
 .footer-col-contact .footer-col-heading {
   text-align: left;
+  width: auto;
 }
 
 .footer-col-heading {
@@ -2264,17 +2292,30 @@ a.footer-contact-link:hover {
 @media (min-width: 640px) {
   .footer-bottom {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
-    gap: 1rem 2rem;
+    gap: var(--footer-col-gap) 2rem;
     margin-top: 1.125rem;
     min-height: 64px;
+  }
+
+  .footer-meta {
+    grid-column: 1;
+  }
+
+  .footer-legal {
+    grid-column: 2;
+    justify-self: end;
+    width: var(--footer-side-width);
+    max-width: 100%;
+    margin-inline-start: auto;
   }
 }
 
 @media (min-width: 1024px) {
   .footer-bottom {
     min-height: 70px;
+    gap: 2rem 2.5rem;
   }
 }
 
@@ -2282,14 +2323,20 @@ a.footer-contact-link:hover {
   margin: 0;
   font-family: var(--font-inter), sans-serif;
   font-weight: 400;
-  font-size: var(--footer-body);
-  line-height: var(--footer-line);
+  font-size: var(--footer-meta-size);
+  line-height: 1.5;
   color: rgba(var(--logo-silver-rgb), 0.65);
 }
 
 @media (min-width: 640px) {
+  .footer-shell {
+    --footer-meta-size: 0.875rem;
+  }
+
   .footer-meta {
     text-align: left;
+    font-size: var(--footer-meta-size);
+    line-height: 1.5;
   }
 }
 
@@ -2330,6 +2377,24 @@ a.footer-contact-link:hover {
   flex-shrink: 0;
 }
 
+.footer-legal-link-short {
+  display: inline;
+}
+
+.footer-legal-link-full {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .footer-legal-link-short {
+    display: none;
+  }
+
+  .footer-legal-link-full {
+    display: inline;
+  }
+}
+
 .footer-legal-link {
   display: inline-flex;
   align-items: center;
@@ -2357,20 +2422,27 @@ a.footer-contact-link:hover {
 }
 
 @media (min-width: 640px) {
+  .footer-shell {
+    --footer-legal-size: 0.8125rem;
+  }
+
   .footer-legal {
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 14px;
+    margin-inline-start: auto;
+    width: var(--footer-side-width);
+    max-width: 100%;
   }
 
   .footer-bottom .footer-legal-links {
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     font-family: var(--font-inter), sans-serif;
     font-weight: 400;
-    font-size: var(--footer-body);
-    line-height: var(--footer-line);
+    font-size: var(--footer-legal-size);
+    line-height: 1.5;
     gap: 12px;
     width: auto;
   }
@@ -2379,8 +2451,8 @@ a.footer-contact-link:hover {
   .footer-bottom .footer-legal-links .footer-legal-link {
     font-family: var(--font-inter), sans-serif;
     font-weight: 400;
-    font-size: var(--footer-body);
-    line-height: var(--footer-line);
+    font-size: var(--footer-legal-size);
+    line-height: 1.5;
     color: var(--offwhite);
     white-space: nowrap;
     word-break: keep-all;
@@ -2456,11 +2528,20 @@ a.footer-contact-link:hover {
   .footer-meta {
     width: 100%;
     max-width: 100%;
-    font-size: var(--footer-body);
-    line-height: var(--footer-line);
+    min-width: 0;
+    font-size: 0.6875rem;
+    line-height: 1.45;
     text-align: center;
     color: rgba(var(--logo-silver-rgb), 0.65);
-    padding-inline: 0.5rem;
+    padding-inline: 0.25rem;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .footer-bottom {
+    min-width: 0;
+    padding-inline: 0;
   }
 
   .footer-legal {
@@ -2471,7 +2552,9 @@ a.footer-contact-link:hover {
     justify-content: center;
     gap: 12px;
     width: 100%;
-    padding-inline: 0.5rem;
+    max-width: 100%;
+    margin-inline: auto;
+    padding-inline: 0;
   }
 
   .footer-legal-links {

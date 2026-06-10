@@ -113,11 +113,13 @@ export function Footer() {
                 <li key={link.label}>
                   {link.href.startsWith('/') ? (
                     <Link href={link.href} className="footer-link footer-legal-link" title={link.label}>
-                      {link.shortLabel}
+                      <span className="footer-legal-link-short">{link.shortLabel}</span>
+                      <span className="footer-legal-link-full">{link.label}</span>
                     </Link>
                   ) : (
                     <a href={link.href} className="footer-link footer-legal-link" title={link.label}>
-                      {link.shortLabel}
+                      <span className="footer-legal-link-short">{link.shortLabel}</span>
+                      <span className="footer-legal-link-full">{link.label}</span>
                     </a>
                   )}
                 </li>
